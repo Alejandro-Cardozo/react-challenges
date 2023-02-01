@@ -1,6 +1,11 @@
 const VideoPage = () => {
   return (
-    <div>VideoPage</div>
+    <div>
+      // VIDEO
+      // Title
+      // new comment 
+      <CommentList />
+    </div>
   )
 }
 
