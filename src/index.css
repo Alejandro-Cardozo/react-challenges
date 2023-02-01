@@ -115,3 +115,7 @@ button {
   align-items: center;
   flex-direction: column;
 }
+
+.videoList {
+  display: flex;
+}

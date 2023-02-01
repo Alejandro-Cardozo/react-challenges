@@ -31,9 +31,11 @@ const MainPage = () => {
   return (
     <div className='container'>
       <h1>Your favorite videos are here</h1>
-      {videos.map((video) => (
-        <VideoThumbnail key={video.id} video={video} />
-      ))}
+      <div className="videoList">
+        {videos.map((video) => (
+          <VideoThumbnail key={video.id} video={video} />
+        ))}
+      </div>
     </div>
   );
 };
