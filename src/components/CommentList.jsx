@@ -12,6 +12,10 @@ const CommentList = () => {
     (comment) => comment.videoId === videoId
   );
 
+  if (!comments) {
+    return <p>There are no comments for this video yet.</p>
+  }
+
   return (
     <div>
       {comments.map((comment) => (

@@ -1,3 +1,5 @@
+import CommentList from "../components/CommentList";
+
 const VideoPage = () => {
   return (
     <div>
