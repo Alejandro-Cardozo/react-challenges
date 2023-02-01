@@ -86,7 +86,10 @@ h1 {
   margin-bottom: 1.5rem;
 }
 
-h2, p, ul, ol {
+h2,
+p,
+ul,
+ol {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
@@ -96,7 +99,8 @@ h3 {
   margin-bottom: 2.5rem;
 }
 
-ol, ul {
+ol,
+ul {
   padding-left: 4rem;
 }
 
@@ -118,4 +122,14 @@ button {
 
 .videoList {
   display: flex;
+}
+
+.commentList {
+  width: 80rem;
+}
+
+.youtube {
+  width: 72rem;
+  height: 40rem;
+  margin-top: 2rem;
 }
