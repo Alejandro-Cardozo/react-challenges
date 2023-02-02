@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import VideoPage from './pages/VideoPage';
 import MainPage from './pages/MainPage';
+import NotFound from './pages/404';
 import { CommentsContextProvider } from './context/CommentsContext';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
   {
     path: '/watch/:videoId',
     element: <VideoPage />,
+  },
+  {
+    path: '/404',
+    element: <NotFound />,
   },
 ]);
 
