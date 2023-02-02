@@ -5,12 +5,12 @@ import Comment from './Comment';
 const CommentList = ({ videoId }) => {
   const commentsContext = useContext(CommentsContext);
 
-  const comments = commentsContext.comments.filter(
-    (comment) => comment.videoId === videoId
-  );
+  const comments = commentsContext.comments
+    .filter((comment) => comment.videoId === videoId)
+    .sort((a, b) => new Date(a.date) < new Date(b.date) ? 1 : -1);
 
   if (!comments) {
-    return <p>There are no comments for this video yet.</p>
+    return <p>There are no comments for this video yet.</p>;
   }
 
   return (

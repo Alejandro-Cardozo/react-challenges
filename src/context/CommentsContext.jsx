@@ -6,13 +6,15 @@ const CommentsContext = createContext({
   addComment: (videoId, userName, comment) => {},
 });
 
-import React from 'react';
-
 export const CommentsContextProvider = (props) => {
   const [comments, setComments] = useState(commentaries);
 
   const addCommentsHandler = (videoId, userName, comment) => {
-    const date = new Date().toISOString();
+    const date = new Date().toLocaleString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
     const newComment = {
       id: comments.length ? comments[comments.length - 1].id + 1 : 0,
       videoId: videoId,
