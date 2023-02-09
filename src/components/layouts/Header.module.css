@@ -1,0 +1,22 @@
+.header {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.items {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: var(--size-8);
+  font-weight: 600;
+  color: white;
+  margin: 1rem;
+}
+
+.select {
+  margin: 2rem;
+}

@@ -1,5 +1,13 @@
+// Components
+import CurrentWeather from './components/CurrentWeather';
+import Layout from './components/layouts/Layout';
+
 function App() {
-  return <h1>Hello World!</h1>;
+  return (
+    <Layout>
+      <CurrentWeather />
+    </Layout>
+  );
 }
 
 export default App;
