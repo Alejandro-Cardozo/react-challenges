@@ -87,7 +87,7 @@ body {
   --size-40: 16rem;
 
   margin: 0;
-  background-color: var(--color-grey-800);
+  background-color: lightblue;
   color: var(--color-grey-700);
   font-family: 'Source Serif Pro', serif;
   font-weight: 300;
