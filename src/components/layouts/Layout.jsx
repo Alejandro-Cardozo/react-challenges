@@ -7,7 +7,7 @@ import classes from './Layout.module.css';
 const Layout = (props) => {
   return (
     <div className={classes.container}>
-      <Header />
+      <Header OnSelectCity={props.OnSelectCity} />
       <div className={classes.content}>{props.children}</div>
     </div>
   );
