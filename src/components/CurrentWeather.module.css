@@ -1,0 +1,25 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  margin: 0 auto;
+}
+
+.temperature {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.degrees {
+  font-size: var(--size-20);
+  font-weight: 500;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+}
+
+.celsius {
+  font-size: var(--size-12);
+}

@@ -1,3 +1,7 @@
+
+// Icons
+import { Sun, Cloud, CloudSun, CloudRain, CloudMoon, Moon } from 'phosphor-react';
+
 export const coordinates = {
   posadas: { latitude: -27.37, longitude: -55.9, details: 'Posadas, Misiones' },
   corrientes: {
@@ -22,3 +26,30 @@ export const coordinates = {
     details: 'Rosario, Santa Fé',
   },
 };
+
+export const details = {
+  sunny: {
+    tag: 'Soleado',
+    icon: Sun,
+  },
+  cloudy: {
+    tag: 'Nublado',
+    icon: Cloud,
+  },
+  cloudyDay: {
+    tag: 'Algo Nublado',
+    icon: CloudSun,
+  },
+  rainy: {
+    tag: 'Lluvioso',
+    icon: CloudRain,
+  },
+  cloudyNight: {
+    tag: 'Algo Nublado',
+    icon: CloudMoon,
+  },
+  night: {
+    tag: 'Templado',
+    icon: Moon,
+  },
+}

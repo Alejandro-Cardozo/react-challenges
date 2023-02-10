@@ -92,11 +92,13 @@ body {
   font-weight: 300;
   font-size: 2rem;
   line-height: 1.25;
-  box-sizing: border-box;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
 
-  background: url(./img/sky_background.jpg);
-  background-repeat: no-repeat;
-  background-size: auto;
+  background-image: linear-gradient(to bottom, #0f052d22, #03258355),
+    url(./img/sky_background.jpg);
+  background-size: cover;
+
+  height: 100vh;
 }
 
 h1,

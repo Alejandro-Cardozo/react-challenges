@@ -14,8 +14,8 @@ const Header = ({ OnSelectCity }) => {
         >
           <option value='posadas'>Posadas</option>
           <option value='corrientes'>Corrientes</option>
-          <option value='formosa'>Formosa</option>
           <option value='resistencia'>Resistencia</option>
+          <option value='formosa'>Formosa</option>
           <option value='parana'>Paraná</option>
           <option value='rosario'>Rosario</option>
         </select>

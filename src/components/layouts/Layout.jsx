@@ -6,10 +6,10 @@ import classes from './Layout.module.css';
 
 const Layout = (props) => {
   return (
-    <div className={classes.container}>
+    <main className={classes.container}>
       <Header OnSelectCity={props.OnSelectCity} />
       <div className={classes.content}>{props.children}</div>
-    </div>
+    </main>
   );
 };
 
