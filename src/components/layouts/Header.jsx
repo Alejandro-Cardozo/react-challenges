@@ -5,17 +5,17 @@ const Header = ({ OnSelectCity }) => {
   return (
     <div className={classes.header}>
       <div className={classes.items}>
-        <div className={classes.logo}>MyWeather</div>
+        <h3 className={classes.logo}>MyWeather</h3>
         <select
           onChange={(e) => OnSelectCity(e.target.value)}
           className={classes.select}
           name='city'
           id='city'
         >
-          <option value='resistencia'>Resistencia</option>
+          <option value='posadas'>Posadas</option>
           <option value='corrientes'>Corrientes</option>
           <option value='formosa'>Formosa</option>
-          <option value='posadas'>Posadas</option>
+          <option value='resistencia'>Resistencia</option>
           <option value='parana'>Paraná</option>
           <option value='rosario'>Rosario</option>
         </select>
