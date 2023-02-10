@@ -12,18 +12,18 @@ const getWeatherDetails = (forecast) => {
     return details.none;
   }
 
-  const { precipitation, cloudcover } = forecast.hourly;
+  const { precipitation, cloudcover } = forecast;
   const dayTime = isDaytime(new Date());
 
-  if (precipitation[0] > 1) {
+  if (precipitation > 1) {
     return details.rainy;
   }
 
-  if (cloudcover > 50) {
+  if (cloudcover > 60) {
     return details.cloudy;
   }
 
-  if (cloudcover > 20) {
+  if (cloudcover > 30) {
     return dayTime ? details.cloudyDay : details.cloudyNight;
   }
 
@@ -48,7 +48,24 @@ const getCurrentWeatherIndex = (forecast) => {
 
 const CurrentWeather = ({ forecast, city }) => {
   const weatherIndex = getCurrentWeatherIndex(forecast);
-  const { Icon, tag, color, weight } = getWeatherDetails(forecast);
+
+  const weatherData = {
+    temperature: forecast?.hourly.temperature_2m[weatherIndex],
+    humidity: forecast?.hourly.relativehumidity_2m[weatherIndex],
+    dewpoint: forecast?.hourly.dewpoint_2m[weatherIndex],
+    apparent_temperature: forecast?.hourly.apparent_temperature[weatherIndex],
+    precipitation: forecast?.hourly.precipitation[weatherIndex],
+    cloudcover: forecast?.hourly.cloudcover[weatherIndex],
+    visibility: forecast?.hourly.visibility[weatherIndex],
+    windspeed: forecast?.hourly.windspeed_10m[weatherIndex],
+    winddirection: forecast?.hourly.winddirection_10m[weatherIndex],
+  }
+
+  const { Icon, tag, color, weight } = getWeatherDetails(weatherData);
+
+  if (!forecast) {
+    return <p className={classes.main}>Cargando...</p>
+  }
 
   return (
     <section className={classes.main}>
@@ -64,14 +81,14 @@ const CurrentWeather = ({ forecast, city }) => {
         {forecast && (
           <>
             <h3 className={classes.degrees}>
-              {forecast.hourly.temperature_2m[weatherIndex]}°
+              {weatherData.temperature}°
             </h3>
             <h4 className={classes.celsius}>C</h4>
           </>
         )}
       </div>
       <h2>{tag}</h2>
-      <WeatherDetails />
+      <WeatherDetails weatherData={weatherData} />
     </section>
   );
 };
