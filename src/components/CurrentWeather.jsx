@@ -1,62 +1,58 @@
-// Components
 import WeatherDetails from './WeatherDetails';
-
-// Styles
 import classes from './CurrentWeather.module.css';
-
-// Data
 import { details } from '../data/data';
 
+const isDaytime = (date) => {
+  const hours = date.getHours();
+  return hours > 5 && hours < 20;
+};
+
+const getWeatherDetails = (forecast) => {
+  if (!forecast) {
+    return details.none;
+  }
+
+  const { precipitation, cloudcover } = forecast.hourly;
+  const dayTime = isDaytime(new Date());
+
+  if (precipitation[0] > 1) {
+    return details.rainy;
+  }
+
+  if (cloudcover > 50) {
+    return details.cloudy;
+  }
+
+  if (cloudcover > 20) {
+    return dayTime ? details.cloudyDay : details.cloudyNight;
+  }
+
+  return dayTime ? details.sunny : details.night;
+};
+
+const roundToNearestHour = (date) => {
+  date.setMinutes(date.getMinutes() + 30);
+  date.setMinutes(0, 0, 0);
+  return date;
+};
+
+const getCurrentWeatherIndex = (forecast) => {
+  if (!forecast || !forecast.hourly || !forecast.hourly.time) {
+    return 12;
+  }
+
+  const currentTimeRounded = roundToNearestHour(new Date()).valueOf();
+  const parsedHours = forecast.hourly.time.map((time) => new Date(time).valueOf());
+  return parsedHours.findIndex((hour) => hour === currentTimeRounded);
+};
+
 const CurrentWeather = ({ forecast, city }) => {
-  const getDetails = (forecastParam) => {
-    if (!forecastParam) {
-      return details.none;
-    }
-    if (forecastParam.hourly?.precipitation[0] > 1) {
-      return details.rainy;
-    }
-    if (forecastParam.hourly?.cloudcover > 50) {
-      return details.cloudy;
-    }
-    if (forecastParam.hourly?.cloudcover > 20) {
-      if (new Date().getHours() > 5 && new Date().getHours() < 20) {
-        return details.cloudyDay;
-      } else {
-        return details.cloudyNight;
-      }
-    }
-    if (new Date().getHours() > 5 && new Date().getHours() < 20) {
-      return details.sunny;
-    } else {
-      return details.night;
-    }
-  };
-
-  const roundToNearestHour = (date) => {
-    date.setMinutes(date.getMinutes() + 30);
-    date.setMinutes(0, 0, 0);
-
-    return date;
-  };
-
-  const currentWeatherIndex = () => {
-    if (forecast?.hourly?.time) {
-      const currentTimeRounded = roundToNearestHour(new Date()).valueOf();
-      const parsedHours = forecast.hourly.time.map((el) =>
-        new Date(el).valueOf()
-      );
-      return parsedHours.findIndex((el) => el === currentTimeRounded);
-    } else {
-      return 12;
-    }
-  };
-
-  const weatherIndex = currentWeatherIndex();
-  const { Icon, tag, color, weight } = getDetails(forecast);
+  const weatherIndex = getCurrentWeatherIndex(forecast);
+  const { Icon, tag, color, weight } = getWeatherDetails(forecast);
 
   return (
     <section className={classes.main}>
-      <h3>{city}</h3>
+      <h1>{city}</h1>
       <div className={classes.temperature}>
         <Icon
           size={128}
@@ -66,13 +62,15 @@ const CurrentWeather = ({ forecast, city }) => {
           className={classes.icon}
         />
         {forecast && (
-          <h3 className={classes.degrees}>
-            {forecast.hourly?.temperature_2m[weatherIndex]}°
-          </h3>
+          <>
+            <h3 className={classes.degrees}>
+              {forecast.hourly.temperature_2m[weatherIndex]}°
+            </h3>
+            <h4 className={classes.celsius}>C</h4>
+          </>
         )}
-        {forecast && <h4 className={classes.celsius}>C</h4>}
       </div>
-      <p>{tag}</p>
+      <h2>{tag}</h2>
       <WeatherDetails />
     </section>
   );
