@@ -1,6 +1,12 @@
-
 // Icons
-import { Sun, Cloud, CloudSun, CloudRain, CloudMoon, Moon } from 'phosphor-react';
+import {
+  Sun,
+  Cloud,
+  CloudSun,
+  CloudRain,
+  CloudMoon,
+  Moon,
+} from 'phosphor-react';
 
 export const coordinates = {
   posadas: { latitude: -27.37, longitude: -55.9, details: 'Posadas, Misiones' },
@@ -30,26 +36,45 @@ export const coordinates = {
 export const details = {
   sunny: {
     tag: 'Soleado',
-    icon: Sun,
+    Icon: Sun,
+    color: '#fce94f',
+    weight: 'bold',
   },
   cloudy: {
     tag: 'Nublado',
-    icon: Cloud,
+    Icon: Cloud,
+    color: '#eeeeec',
+    weight: 'bold',
   },
   cloudyDay: {
     tag: 'Algo Nublado',
-    icon: CloudSun,
+    Icon: CloudSun,
+    color: '#eeeeec',
+    weight: 'duotone',
   },
   rainy: {
     tag: 'Lluvioso',
-    icon: CloudRain,
+    Icon: CloudRain,
+    color: '#eeeeec',
+    weight: 'bold',
   },
   cloudyNight: {
     tag: 'Algo Nublado',
-    icon: CloudMoon,
+    Icon: CloudMoon,
+    color: '#eeeeec',
+    weight: 'duotone',
   },
   night: {
     tag: 'Templado',
-    icon: Moon,
+    Icon: Moon,
+    color: '#eeeeec',
+    weight: 'bold',
   },
-}
+  none: {
+    tag: '',
+    Icon: Sun,
+    color: '#eeeeec00',
+    weight: 'bold',
+
+  }
+};

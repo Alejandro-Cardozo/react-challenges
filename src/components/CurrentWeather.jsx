@@ -6,19 +6,30 @@ import classes from './CurrentWeather.module.css';
 
 // Data
 import { details } from '../data/data';
-import { useState } from 'react';
 
 const CurrentWeather = ({ forecast, city }) => {
-  const getDetails = (forecast) => {
-    if (forecast.hourly?.precipitation[0] > 1) {
+  const getDetails = (forecastParam) => {
+    if (!forecastParam) {
+      return details.none;
+    }
+    if (forecastParam.hourly?.precipitation[0] > 1) {
       return details.rainy;
     }
-    if (forecast.hourly?.cloudcover > 50) {
+    if (forecastParam.hourly?.cloudcover > 50) {
       return details.cloudy;
     }
-    // if (forecast.hourly?.cloudcover > 20) {
-    //   if ()
-    // }
+    if (forecastParam.hourly?.cloudcover > 20) {
+      if (new Date().getHours() > 5 && new Date().getHours() < 20) {
+        return details.cloudyDay;
+      } else {
+        return details.cloudyNight;
+      }
+    }
+    if (new Date().getHours() > 5 && new Date().getHours() < 20) {
+      return details.sunny;
+    } else {
+      return details.night;
+    }
   };
 
   const roundToNearestHour = (date) => {
@@ -41,20 +52,27 @@ const CurrentWeather = ({ forecast, city }) => {
   };
 
   const weatherIndex = currentWeatherIndex();
+  const { Icon, tag, color, weight } = getDetails(forecast);
 
   return (
     <section className={classes.main}>
       <h3>{city}</h3>
       <div className={classes.temperature}>
-        {/* <Sun size={128} alt='sunny' color='yellow' /> */}
+        <Icon
+          size={128}
+          alt={tag}
+          color={color}
+          weight={weight}
+          className={classes.icon}
+        />
         {forecast && (
           <h3 className={classes.degrees}>
             {forecast.hourly?.temperature_2m[weatherIndex]}°
           </h3>
         )}
-        <h4 className={classes.celsius}>C</h4>
+        {forecast && <h4 className={classes.celsius}>C</h4>}
       </div>
-      <p>description</p>
+      <p>{tag}</p>
       <WeatherDetails />
     </section>
   );
