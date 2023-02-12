@@ -1,0 +1,17 @@
+.details {
+  display: flex;
+  column-gap: 1.5rem;
+  width: 70%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.item {
+  font-size: var(--size-4);
+  font-weight: normal;
+}
+
+.item > p {
+  margin: .5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
