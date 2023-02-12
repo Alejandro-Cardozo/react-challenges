@@ -94,11 +94,9 @@ body {
   line-height: 1.25;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
 
-  background-image: linear-gradient(to bottom, #0f052d44, #03258378),
+  background-image: linear-gradient(to top, #0f052d44, #0f052d44),
     url(./img/sky_background.jpg);
   background-size: cover;
-
-  height: 100vh;
 }
 
 h1,

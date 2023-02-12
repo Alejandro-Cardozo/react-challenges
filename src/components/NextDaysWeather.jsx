@@ -10,7 +10,7 @@ const NextDaysWeather = ({ nextDays }) => {
   }
 
   return (
-    <div>
+    <div className={classes.main}>
       {nextDays.time.map((time, i) => (
         <SimpleCardWeather
           key={time}
