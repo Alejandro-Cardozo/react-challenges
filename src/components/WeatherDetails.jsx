@@ -18,6 +18,11 @@ const WeatherDetails = ({ weatherData }) => {
     <div className={classes.details}>
       <div className={classes.item}>
         <p>
+          Humedad <span className={classes.value}>{humidity}</span>%
+        </p>
+      </div>
+      <div className={classes.item}>
+        <p>
           Viento
           <span className={classes.value}>
             <span>
@@ -34,11 +39,6 @@ const WeatherDetails = ({ weatherData }) => {
             {windspeed}
           </span>{' '}
           km/h
-        </p>
-      </div>
-      <div className={classes.item}>
-        <p>
-          Humedad <span className={classes.value}>{humidity}</span>%
         </p>
       </div>
       <div className={classes.item}>

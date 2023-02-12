@@ -1,7 +1,7 @@
 .details {
   display: flex;
   column-gap: 5rem;
-  width: 70%;
+  max-width: 70rem;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -22,4 +22,10 @@
 
 .value {
   margin-left: .8rem;
+}
+
+@media (max-width: 56.25em) {
+  .details {
+    max-width: 30rem;
+  }
 }
