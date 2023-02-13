@@ -1,7 +1,8 @@
+// Emotion setup
 /** @jsxImportSource @emotion/react */
-
 import { css } from '@emotion/react';
 
+// Styles
 const todoStyles = css`
   margin: 2px;
   padding: 2rem;

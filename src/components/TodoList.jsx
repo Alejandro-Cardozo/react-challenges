@@ -1,10 +1,15 @@
+// Emotion setup
 /** @jsxImportSource @emotion/react */
-
 import { css } from '@emotion/react';
-import { useContext } from 'react';
-import TodoContext from '../context/context';
+
+// Components
 import Todo from './Todo';
 
+// Context
+import { useContext } from 'react';
+import TodoContext from '../context/context';
+
+// Styles
 const noTasksStyles = css`
   color: whitesmoke;
 `;

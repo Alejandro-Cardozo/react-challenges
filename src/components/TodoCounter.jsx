@@ -1,10 +1,10 @@
+// Emotion setup
 /** @jsxImportSource @emotion/react */
-
-import { useContext } from 'react';
-
-import TodoContext from '../context/context';
-
 import { css } from '@emotion/react';
+
+// Context
+import { useContext } from 'react';
+import TodoContext from '../context/context';
 
 const TodoCounter = () => {
   const todoCtx = useContext(TodoContext);
@@ -14,7 +14,7 @@ const TodoCounter = () => {
       css={
         !todoCtx.todos.length
           ? css`
-              display: none ;
+              display: none;
             `
           : css`
               color: whitesmoke;

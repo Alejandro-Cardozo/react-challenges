@@ -1,7 +1,8 @@
+// Emotion setup
 /** @jsxImportSource @emotion/react */
-
 import { css } from '@emotion/react';
 
+// Styles
 const cardStyles = css`
   height: 85vh;
   font-size: 2rem;

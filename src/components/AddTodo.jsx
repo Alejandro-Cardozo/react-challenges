@@ -1,9 +1,12 @@
+// Emotion setup
 /** @jsxImportSource @emotion/react */
-
-import React, { useState, useContext } from 'react';
-import TodoContext from '../context/context';
 import { css } from '@emotion/react';
 
+// Context
+import { useState, useContext } from 'react';
+import TodoContext from '../context/context';
+
+// Styles
 const formStyles = css`
   display: flex;
   justify-content: center;

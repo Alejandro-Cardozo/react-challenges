@@ -1,5 +1,6 @@
 import { createContext, useState } from 'react';
 
+// Context
 const TodoContext = createContext({
   todos: [],
   selectTodo: (id) => {},
@@ -7,6 +8,7 @@ const TodoContext = createContext({
   addTodo: (todo) => {},
 });
 
+// Context Provider
 export const TodoContextProvider = (props) => {
   const [todos, setTodos] = useState([
     { id: 1, title: 'Work out', checked: false },
