@@ -53,14 +53,20 @@ const todoStyles = css`
 `;
 
 const Todo = ({ id, title, checked, onDelete, onCheck }) => {
+
+  const onCheckHandler = (e) => {
+    e.stopPropagation();
+    return onCheck;
+  }
+
   return (
-    <div css={todoStyles}>
+    <div css={todoStyles} onClick={onCheck}>
       <input
         type='checkbox'
         name={`${title + id}`}
         id={`${title + id}`}
         checked={checked}
-        onChange={onCheck}
+        onChange={onCheckHandler}
       />
       <p className={checked ? 'checked' : ''}>{title}</p>
       <button onClick={onDelete}>x</button>

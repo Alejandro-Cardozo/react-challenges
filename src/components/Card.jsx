@@ -3,6 +3,7 @@
 import { css } from '@emotion/react';
 
 const cardStyles = css`
+  height: 85vh;
   font-size: 2rem;
   color: #3a3a3a;
   margin: 0 auto;
