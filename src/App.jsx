@@ -9,7 +9,7 @@ function App() {
   return (
     <TodoContextProvider>
       <Card>
-        <Headers />
+        <Headers text='things to do' />
         <TodoList />
         <TodoCounter />
         <AddTodo />

@@ -1,14 +1,22 @@
+/** @jsxImportSource @emotion/react */
+
+import { css } from '@emotion/react';
 import { useContext } from 'react';
 import TodoContext from '../context/context';
 import Todo from './Todo';
 import classes from './Todo.module.css';
 
+const noTasksStyles = css`
+  color: whitesmoke;
+`;
+
 const TodoList = () => {
   const todoCtx = useContext(TodoContext);
   return (
     <>
-      <hr />
-      {!todoCtx.todos.length && <h5>Nothing to do today</h5>}
+      {!todoCtx.todos.length && (
+        <h5 css={noTasksStyles}>Nothing to do today</h5>
+      )}
       <div className={classes.list}>
         {todoCtx.todos.map((task) => (
           <Todo
@@ -21,7 +29,6 @@ const TodoList = () => {
           />
         ))}
       </div>
-      <hr />
     </>
   );
 };
