@@ -1,3 +1,15 @@
+/** @jsxImportSource @emotion/react */
+
+import { css } from "@emotion/react";
+
+const labelStyles = css`
+  margin: 0 15px;
+`
+
+const todoStyles = css`
+  margin: 2px;
+`
+
 const Todo = ({ id, title, checked, onDelete, onCheck }) => {
   return (
     <div style={{ margin: '2px' }}>
@@ -10,7 +22,7 @@ const Todo = ({ id, title, checked, onDelete, onCheck }) => {
       />
       <label
         htmlFor={`${title + id}`}
-        style={{ marginRight: '15px', marginLeft: '15px' }}
+        css={labelStyles}
       >
         {title}
       </label>
