@@ -54,12 +54,13 @@ const todoStyles = css`
 
 const Todo = ({ id, title, checked, onDelete, onCheck }) => {
   return (
-    <div css={todoStyles} onClick={onCheck}>
+    <div css={todoStyles}>
       <input
         type='checkbox'
         name={`${title + id}`}
         id={`${title + id}`}
         checked={checked}
+        onChange={onCheck}
       />
       <p className={checked ? 'checked' : ''}>{title}</p>
       <button onClick={onDelete}>x</button>
