@@ -98,13 +98,6 @@ button svg {
   margin: 0;
 }
 
-.progress {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-}
-
 /* time */
 .time {
   color: #333;
