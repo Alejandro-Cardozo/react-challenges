@@ -48,11 +48,13 @@ const Controls = ({
     playAnimationRef.current = requestAnimationFrame(repeat);
   }, [isPlaying, audioRef, repeat]);
 
-  const skipForward = () => {};
+  const skipForward = () => {
+    audioRef.current.currentTime += 15;
+  };
 
-  const skipBackward = () => {};
-
-  const handlePrevious = () => {};
+  const skipBackward = () => {
+    audioRef.current.currentTime -= 15;
+  };
 
   const handleNext = () => {
     if (trackIndex >= tracks.length - 1) {
@@ -61,6 +63,17 @@ const Controls = ({
     } else {
       setTrackIndex((prev) => prev + 1);
       setCurrentTrack(tracks[trackIndex + 1]);
+    }
+  };
+
+  const handlePrevious = () => {
+    if (trackIndex === 0) {
+      let lastTrackIndex = tracks.length - 1;
+      setTrackIndex(lastTrackIndex);
+      setCurrentTrack(tracks[lastTrackIndex]);
+    } else {
+      setTrackIndex((prev) => prev - 1);
+      setCurrentTrack(tracks[trackIndex - 1]);
     }
   };
 
