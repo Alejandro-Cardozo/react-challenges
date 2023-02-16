@@ -1,12 +1,21 @@
 // Styles
 import classes from './ProgressBar.module.css';
 
-const ProgressBar = () => {
+const ProgressBar = ({ progressBarRef, audioRef, timeProgress, duration }) => {
+  const handleProgressChange = () => {
+    audioRef.current.currentTime = progressBarRef.current.value;
+  };
+
   return (
     <div className={classes.progress}>
-      <span className='time current'>00:00</span>
-      <input type='range' />
-      <span className='time'>03:34</span>
+      <span className='time current'>{timeProgress}</span>{' '}
+      <input
+        type='range'
+        ref={progressBarRef}
+        defaultValue='0'
+        onChange={handleProgressChange}
+      />
+      <span className='time'>{duration}</span>
     </div>
   );
 };
