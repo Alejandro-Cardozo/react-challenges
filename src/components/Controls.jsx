@@ -10,7 +10,16 @@ import {
   IoPauseSharp,
 } from 'react-icons/io5';
 
-const Controls = ({ audioRef, progressBarRef, duration, setTimeProgress }) => {
+const Controls = ({
+  audioRef,
+  progressBarRef,
+  duration,
+  setTimeProgress,
+  tracks,
+  trackIndex,
+  setTrackIndex,
+  setCurrentTrack,
+}) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const playAnimationRef = useRef();
 
@@ -39,23 +48,39 @@ const Controls = ({ audioRef, progressBarRef, duration, setTimeProgress }) => {
     playAnimationRef.current = requestAnimationFrame(repeat);
   }, [isPlaying, audioRef, repeat]);
 
+  const skipForward = () => {};
+
+  const skipBackward = () => {};
+
+  const handlePrevious = () => {};
+
+  const handleNext = () => {
+    if (trackIndex >= tracks.length - 1) {
+      setTrackIndex(0);
+      setCurrentTrack(tracks[0]);
+    } else {
+      setTrackIndex((prev) => prev + 1);
+      setCurrentTrack(tracks[trackIndex + 1]);
+    }
+  };
+
   return (
     <div className='controls-wrapper'>
       <div className='controls'>
-        <button>
+        <button onClick={handlePrevious}>
           <IoPlaySkipBackSharp />
         </button>
-        <button>
+        <button onClick={skipBackward}>
           <IoPlayBackSharp />
         </button>
 
         <button onClick={togglePlayPause}>
           {isPlaying ? <IoPauseSharp /> : <IoPlaySharp />}
         </button>
-        <button>
+        <button onClick={skipForward}>
           <IoPlayForwardSharp />
         </button>
-        <button>
+        <button onClick={handleNext}>
           <IoPlaySkipForwardSharp />
         </button>
       </div>
