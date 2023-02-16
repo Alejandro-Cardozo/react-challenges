@@ -17,7 +17,9 @@ const AudioPlayer = () => {
   return (
     <div className='audio-player'>
       <div className='inner'>
-        <DisplayTrack {...{ currentTrack, audioRef }} />
+        <DisplayTrack
+          {...{ currentTrack, audioRef, setDuration, progressBarRef }}
+        />
         <Controls {...{ audioRef }} />{' '}
         <ProgressBar
           {...{ progressBarRef, audioRef, timeProgress, duration }}
