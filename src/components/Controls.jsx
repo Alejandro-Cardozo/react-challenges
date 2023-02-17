@@ -15,15 +15,20 @@ import {
   IoVolumeLow,
 } from 'react-icons/io5';
 
+// Styles
+import classes from './Controls.module.css';
+
 const Controls = ({
   audioRef,
   progressBarRef,
+  volumeBarRef,
   duration,
   setTimeProgress,
   tracks,
   trackIndex,
   setTrackIndex,
   setCurrentTrack,
+  handleNext,
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(60);
@@ -55,16 +60,6 @@ const Controls = ({
     audioRef.current.currentTime -= 15;
   };
 
-  const handleNext = () => {
-    if (trackIndex >= tracks.length - 1) {
-      setTrackIndex(0);
-      setCurrentTrack(tracks[0]);
-    } else {
-      setTrackIndex((prev) => prev + 1);
-      setCurrentTrack(tracks[trackIndex + 1]);
-    }
-  };
-
   const handlePrevious = () => {
     if (trackIndex === 0) {
       let lastTrackIndex = tracks.length - 1;
@@ -75,6 +70,17 @@ const Controls = ({
       setCurrentTrack(tracks[trackIndex - 1]);
     }
   };
+
+  const handleVolumeChange = (e) => {
+    setVolume(e.target.value)
+  }
+
+  useEffect(() => {
+    volumeBarRef.current.style.setProperty(
+      '--range-volume',
+      `${volume}%`
+    );
+  }, [volume, volumeBarRef])
 
   useEffect(() => {
     if (isPlaying) {
@@ -88,13 +94,8 @@ const Controls = ({
   useEffect(() => {
     if (audioRef) {
       audioRef.current.volume = volume / 100;
-    }
-  }, [volume, audioRef]);
-
-  useEffect(() => {
-    if (audioRef) {
-      audioRef.current.volume = volume / 100;
       audioRef.current.muted = muteVolume;
+
     }
   }, [volume, audioRef, muteVolume]);
 
@@ -118,7 +119,7 @@ const Controls = ({
           <IoPlaySkipForwardSharp />
         </button>
       </div>
-      <div className='volume'>
+      <div className={classes.volume}>
         <button onClick={() => setMuteVolume((prev) => !prev)}>
           {muteVolume || volume < 5 ? (
             <IoVolumeOff />
@@ -131,14 +132,12 @@ const Controls = ({
           )}
         </button>
         <input
-          style={{
-            background: `linear-gradient(to right, #f50 ${volume}%, #ccc ${volume}%)`,
-          }}
           type='range'
           min={0}
           max={100}
           value={volume}
-          onChange={(e) => setVolume(e.target.value)}
+          ref={volumeBarRef}
+          onChange={handleVolumeChange}
         />
       </div>
     </div>

@@ -5,6 +5,7 @@ const DisplayTrack = ({
   audioRef,
   setDuration,
   progressBarRef,
+  handleNext
 }) => {
   const onLoadedMetadata = () => {
     const seconds = audioRef.current.duration;
@@ -18,6 +19,7 @@ const DisplayTrack = ({
         src={currentTrack.src}
         ref={audioRef}
         onLoadedMetadata={onLoadedMetadata}
+        onEnded={handleNext}
       />
       <div className='audio-info'>
         <div className='audio-image'>
