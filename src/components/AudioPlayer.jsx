@@ -1,5 +1,7 @@
-import { useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import useTrack from '../hooks/useTrack';
 import { tracks } from '../../data/tracks'
+import usePlayAnimation from '../hooks/usePlayingAnimation';
 
 // Components
 import DisplayTrack from './DisplayTrack'
@@ -9,22 +11,26 @@ import ProgressBar from './ProgressBar'
 const AudioPlayer = () => {
   const [timeProgress, setTimeProgress] = useState(0)
   const [duration, setDuration] = useState(0)
-  const [trackIndex, setTrackIndex] = useState(0)
-  const [currentTrack, setCurrentTrack] = useState(tracks[trackIndex])
 
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  
   const audioRef = useRef()
   const progressBarRef = useRef()
   const volumeBarRef = useRef()
+  
+  const [currentTrack, handleNext, handlePrevious] = useTrack(tracks)
 
-  const handleNext = () => {
-    if (trackIndex >= tracks.length - 1) {
-      setTrackIndex(0)
-      setCurrentTrack(tracks[0])
+  usePlayAnimation(audioRef, progressBarRef, duration, setTimeProgress);
+
+
+  useEffect(() => {
+    if (isPlaying) {
+      audioRef.current.play();
     } else {
-      setTrackIndex((prev) => prev + 1)
-      setCurrentTrack(tracks[trackIndex + 1])
+      audioRef.current.pause();
     }
-  }
+  }, [isPlaying, audioRef, currentTrack]);
 
   return (
     <div className='audio-player'>
@@ -35,15 +41,11 @@ const AudioPlayer = () => {
         <Controls
           {...{
             audioRef,
-            progressBarRef,
             volumeBarRef,
-            duration,
-            setTimeProgress,
-            tracks,
-            trackIndex,
-            setTrackIndex,
-            setCurrentTrack,
-            handleNext
+            handleNext,
+            handlePrevious,
+            isPlaying,
+            setIsPlaying
           }}
         />
         <ProgressBar
