@@ -1,4 +1,4 @@
-import { BsMusicNoteBeamed } from 'react-icons/bs';
+import { BsMusicNoteBeamed } from 'react-icons/bs'
 
 const DisplayTrack = ({
   currentTrack,
@@ -8,10 +8,10 @@ const DisplayTrack = ({
   handleNext
 }) => {
   const onLoadedMetadata = () => {
-    const seconds = audioRef.current.duration;
-    setDuration(seconds);
-    progressBarRef.current.max = seconds;
-  };
+    const seconds = audioRef.current.duration
+    setDuration(seconds)
+    progressBarRef.current.max = seconds
+  }
 
   return (
     <div>
@@ -23,15 +23,17 @@ const DisplayTrack = ({
       />
       <div className='audio-info'>
         <div className='audio-image'>
-          {currentTrack.thumbnail ? (
-            <img src={currentTrack.thumbnail} alt='audio avatar' />
-          ) : (
-            <div className='icon-wrapper'>
-              <span className='audio-icon'>
-                <BsMusicNoteBeamed />
-              </span>
-            </div>
-          )}
+          {currentTrack.thumbnail
+            ? (
+              <img src={currentTrack.thumbnail} alt='audio avatar' />
+              )
+            : (
+              <div className='icon-wrapper'>
+                <span className='audio-icon'>
+                  <BsMusicNoteBeamed />
+                </span>
+              </div>
+              )}
         </div>
         <div className='text'>
           <p className='title'>{currentTrack.title}</p>
@@ -39,6 +41,6 @@ const DisplayTrack = ({
         </div>
       </div>
     </div>
-  );
-};
-export default DisplayTrack;
+  )
+}
+export default DisplayTrack
