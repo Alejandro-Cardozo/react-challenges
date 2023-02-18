@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
 const useVolume = (audioRef) => {
-  const [volume, setVolume] = useState(60)
+  const [volume, setVolume] = useState(75)
   const [muteVolume, setMuteVolume] = useState(false)
 
   const handleVolumeChange = (e) => {
