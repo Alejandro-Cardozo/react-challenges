@@ -1,7 +1,7 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
-import useTrack from '../hooks/useTrack';
+import { useEffect, useRef, useState } from 'react'
+import useTrack from '../hooks/useTrack'
 import { tracks } from '../../data/tracks'
-import usePlayAnimation from '../hooks/usePlayingAnimation';
+import usePlayAnimation from '../hooks/usePlayingAnimation'
 
 // Components
 import DisplayTrack from './DisplayTrack'
@@ -12,25 +12,23 @@ const AudioPlayer = () => {
   const [timeProgress, setTimeProgress] = useState(0)
   const [duration, setDuration] = useState(0)
 
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false)
 
-  
   const audioRef = useRef()
   const progressBarRef = useRef()
   const volumeBarRef = useRef()
-  
+
   const [currentTrack, handleNext, handlePrevious] = useTrack(tracks)
 
-  usePlayAnimation(audioRef, progressBarRef, duration, setTimeProgress);
-
+  usePlayAnimation(audioRef, progressBarRef, duration, setTimeProgress)
 
   useEffect(() => {
     if (isPlaying) {
-      audioRef.current.play();
+      audioRef.current.play()
     } else {
-      audioRef.current.pause();
+      audioRef.current.pause()
     }
-  }, [isPlaying, audioRef, currentTrack]);
+  }, [isPlaying, audioRef, currentTrack])
 
   return (
     <div className='audio-player'>

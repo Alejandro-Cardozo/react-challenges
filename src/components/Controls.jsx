@@ -1,7 +1,3 @@
-// Hooks
-import { useState, useEffect} from 'react';
-import useVolume from '../hooks/useVolume';
-
 // Icons
 import {
   IoPlayBackSharp,
@@ -9,15 +5,9 @@ import {
   IoPlaySkipBackSharp,
   IoPlaySkipForwardSharp,
   IoPlaySharp,
-  IoPauseSharp,
-  IoVolumeHigh,
-  IoVolumeOff,
-  IoVolumeMedium,
-  IoVolumeLow,
-} from 'react-icons/io5';
-
-// Styles
-import classes from './Controls.module.css';
+  IoPauseSharp
+} from 'react-icons/io5'
+import VolumeControl from './VolumeControl'
 
 const Controls = ({
   audioRef,
@@ -27,34 +17,17 @@ const Controls = ({
   isPlaying,
   setIsPlaying
 }) => {
-  const [volume, muteVolume, handleVolumeChange, setMuteVolume] = useVolume(audioRef)
-
   const togglePlayPause = () => {
-    setIsPlaying((prev) => !prev);
-  };
+    setIsPlaying((prev) => !prev)
+  }
 
   const skipForward = () => {
-    audioRef.current.currentTime += 15;
-  };
+    audioRef.current.currentTime += 15
+  }
 
   const skipBackward = () => {
-    audioRef.current.currentTime -= 15;
-  };
-
-  useEffect(() => {
-    volumeBarRef.current.style.setProperty(
-      '--range-volume',
-      `${volume}%`
-    );
-  }, [volume, volumeBarRef])
-
-  useEffect(() => {
-    if (audioRef) {
-      audioRef.current.volume = volume / 100;
-      audioRef.current.muted = muteVolume;
-
-    }
-  }, [volume, audioRef, muteVolume]);
+    audioRef.current.currentTime -= 15
+  }
 
   return (
     <div className='controls-wrapper'>
@@ -76,29 +49,9 @@ const Controls = ({
           <IoPlaySkipForwardSharp />
         </button>
       </div>
-      <div className={classes.volume}>
-        <button onClick={() => setMuteVolume((prev) => !prev)}>
-          {muteVolume || volume < 5 ? (
-            <IoVolumeOff />
-          ) : volume < 35 ? (
-            <IoVolumeLow />
-          ) : volume < 75 ? (
-            <IoVolumeMedium />
-          ) : (
-            <IoVolumeHigh />
-          )}
-        </button>
-        <input
-          type='range'
-          min={0}
-          max={100}
-          value={volume}
-          ref={volumeBarRef}
-          onChange={handleVolumeChange}
-        />
-      </div>
+      <VolumeControl {...{ audioRef, volumeBarRef }} />
     </div>
-  );
-};
+  )
+}
 
-export default Controls;
+export default Controls
