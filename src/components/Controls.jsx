@@ -1,6 +1,9 @@
+// Components
 import PlayControls from './PlayControls'
 import VolumeControl from './VolumeControl'
 
+// Styles
+import classes from './Controls.module.css'
 const Controls = ({
   audioRef,
   volumeBarRef,
@@ -10,7 +13,7 @@ const Controls = ({
   setIsPlaying
 }) => {
   return (
-    <div className='controls-wrapper'>
+    <div className={classes['controls-wrapper']}>
       <PlayControls
         {...{
           audioRef,

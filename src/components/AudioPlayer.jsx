@@ -9,6 +9,9 @@ import Controls from './Controls'
 import ProgressBar from './ProgressBar'
 import usePlayTrack from '../hooks/usePlayTrack'
 
+// Styles
+import classes from './AudioPlayer.module.css'
+
 const AudioPlayer = () => {
   const [timeProgress, setTimeProgress] = useState(0)
   const [duration, setDuration] = useState(0)
@@ -24,8 +27,8 @@ const AudioPlayer = () => {
   usePlayTrack(isPlaying, audioRef, currentTrack)
 
   return (
-    <div className='audio-player'>
-      <div className='inner'>
+    <div className={classes['audio-player']}>
+      <div className={classes.inner}>
         <DisplayTrack
           {...{ currentTrack, audioRef, setDuration, progressBarRef, handleNext }}
         />{' '}

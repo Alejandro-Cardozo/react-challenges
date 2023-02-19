@@ -1,4 +1,8 @@
+// Icons
 import { BsMusicNoteBeamed } from 'react-icons/bs'
+
+// Styles
+import classes from './DisplayTrack.module.css'
 
 const DisplayTrack = ({
   currentTrack,
@@ -14,33 +18,33 @@ const DisplayTrack = ({
   }
 
   return (
-    <div>
+    <>
       <audio
         src={currentTrack.src}
         ref={audioRef}
         onLoadedMetadata={onLoadedMetadata}
         onEnded={handleNext}
       />
-      <div className='audio-info'>
-        <div className='audio-image'>
+      <div className={classes['audio-info']}>
+        <div className={classes['audio-image']}>
           {currentTrack.thumbnail
             ? (
               <img src={currentTrack.thumbnail} alt='audio avatar' />
               )
             : (
-              <div className='icon-wrapper'>
-                <span className='audio-icon'>
+              <div className={classes['icon-wrapper']}>
+                <span className={classes['audio-icon']}>
                   <BsMusicNoteBeamed />
                 </span>
               </div>
               )}
         </div>
-        <div className='text'>
-          <p className='title'>{currentTrack.title}</p>
+        <div className={classes.text}>
+          <p className={classes.title}>{currentTrack.title}</p>
           <p>{currentTrack.author}</p>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 export default DisplayTrack

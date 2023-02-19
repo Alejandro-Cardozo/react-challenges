@@ -8,6 +8,9 @@ import {
   IoPauseSharp
 } from 'react-icons/io5'
 
+// Styles
+import classes from './PlayControls.module.css'
+
 const PlayControls = ({
   audioRef,
   handlePrevious,
@@ -27,7 +30,7 @@ const PlayControls = ({
     audioRef.current.currentTime -= 15
   }
   return (
-    <div className='controls'>
+    <div className={classes.controls}>
       <button onClick={handlePrevious}>
         <IoPlaySkipBackSharp />
       </button>

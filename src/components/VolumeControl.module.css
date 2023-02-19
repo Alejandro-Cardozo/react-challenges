@@ -24,6 +24,7 @@
   height: 2px;
   border-radius: 2px;
   cursor: pointer;
+  border: 0.5rem solid #c1b6bc;
 }
 
 /* Input range - firefox */
@@ -34,6 +35,7 @@
   height: 2px;
   border-radius: 2px;
   cursor: pointer;
+  border: 0.5rem solid #c1b6bc;
 }
 
 /* played volume length - Chrome & safari*/
