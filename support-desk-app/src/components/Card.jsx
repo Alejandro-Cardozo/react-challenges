@@ -20,7 +20,7 @@ const Card = ({ user }) => {
   return (
     <div className={classes.card}>
       <img className={classes.picture} src={userData.picture} alt={userData.completeName} />
-      <img className={classes.flag} src={userData.flag} width='80' alt={userData.country} />
+      <img className={classes.flag} src={userData.flag} alt={userData.country} />
       <div className={classes.content}>
         <span
           className={`${classes.age} ${
