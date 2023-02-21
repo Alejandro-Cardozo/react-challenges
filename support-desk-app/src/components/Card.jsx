@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classes from './Card.module.css';
 
 const Card = ({ user }) => {
@@ -17,17 +18,8 @@ const Card = ({ user }) => {
 
   return (
     <div className={classes.card}>
-      <img
-        className={classes.picture}
-        src={userData.picture}
-        alt={userData.completeName}
-      />
-      <img
-        className={classes.flag}
-        src={userData.flag}
-        width='80'
-        alt={userData.country}
-      />
+      <img className={classes.picture} src={userData.picture} alt={userData.completeName} />
+      <img className={classes.flag} src={userData.flag} width='80' alt={userData.country} />
       <div className={classes.content}>
         <span
           className={`${classes.age} ${
@@ -49,4 +41,7 @@ const Card = ({ user }) => {
   );
 };
 
+Card.propTypes = {
+  user: PropTypes.object.isRequired,
+};
 export default Card;

@@ -11,7 +11,7 @@ function App() {
       try {
         setIsLoading(true);
         const response = await fetch(
-          'https://randomuser.me/api/?results=8&inc=name,gender,dob,email,phone,picture,location,nat,login&nat=us,fr,gb,br,de,es,mx'
+          'https://randomuser.me/api/?results=8&inc=name,gender,dob,email,phone,picture,location,nat,login&nat=us,fr,gb,br,de,es,mx',
         );
         const data = await response.json();
         setUsers(data.results);
@@ -43,10 +43,10 @@ function App() {
   }
 
   return (
-    <div className='home'>
+    <main className='home'>
       <h1>Meet our team</h1>
       <TeamMembers users={users} />
-    </div>
+    </main>
   );
 }
 
