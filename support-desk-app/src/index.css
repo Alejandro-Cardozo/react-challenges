@@ -1,22 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?Roboto+Slab:wght@300;400;500&family=Source+Serif+Pro:wght@300;400&display=swap');
+
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 html {
   font-size: 62.5%;
 }
+@media (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
+}
 
 body {
-  font-family: 'Lato', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
+  font-family: 'Source Serif Pro', serif;
+  font-weight: 300;
+  font-size: 2rem;
   line-height: 1.7;
-  color: #222;
-  padding: 30px;
+  background-color: rgb(216, 221, 225);
+  color: #4b4a5d;
+  padding: 3rem;
+}
+
+h1,
+p,
+ul,
+ol {
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+h2 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+h3,
+h4,
+h5 {
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
 }
 
 .home {
@@ -32,5 +70,5 @@ body {
   margin-top: 5rem;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 3rem;
+  gap: 2rem;
 }
