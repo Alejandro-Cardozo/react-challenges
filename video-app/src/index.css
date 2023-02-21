@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap');
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+@media (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
+}
+
+body {
+  --color-grey-50: hsl(265, 55%, 96%);
+  --color-grey-100: hsl(265, 19%, 88%);
+  --color-grey-200: hsl(265, 7%, 70%);
+  --color-grey-300: hsl(265, 6%, 66%);
+  --color-grey-400: hsl(265, 4%, 57%);
+  --color-grey-500: hsl(265, 3%, 53%);
+  --color-grey-600: hsl(265, 4%, 42%);
+  --color-grey-700: hsl(265, 4%, 31%);
+  --color-grey-800: hsl(276, 5%, 20%);
+  --color-grey-900: hsl(280, 5%, 13%);
+
+  --color-primary-50: #c8b3ce;
+  --color-primary-100: #a07aaa;
+  --color-primary-200: #884c97;
+  --color-primary-300: #843897;
+  --color-primary-400: #732392;
+  --color-primary-500: #5a097a;
+  --color-primary-600: #480264;
+  --color-primary-700: #3d0264;
+
+  --color-success-100: #a2f0bc;
+  --color-success-500: #12bd4b;
+
+  --color-error-100: #f1acc9;
+  --color-error-500: #a10c4a;
+
+  --size-1: 0.4rem;
+  --size-2: 0.8rem;
+  --size-3: 1.2rem;
+  --size-4: 1.6rem;
+  --size-5: 2rem;
+  --size-6: 2.4rem;
+  --size-8: 3.2rem;
+  --size-16: 6.4rem;
+  --size-20: 8rem;
+  --size-40: 16rem;
+
+  margin: 0;
+  background-color: var(--color-grey-50);
+  color: #252525;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.25;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Encode Sans Expanded', sans-serif;
+}
+
+h1 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h2,
+p,
+ul,
+ol {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+ol,
+ul {
+  padding-left: 4rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.videoList {
+  display: flex;
+}
+
+.commentList {
+  width: 80rem;
+}
+
+.youtube {
+  width: 72rem;
+  height: 40rem;
+  margin-top: 2rem;
+}
