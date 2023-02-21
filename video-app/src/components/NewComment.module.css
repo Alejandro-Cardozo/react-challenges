@@ -1,0 +1,25 @@
+.commentForm {
+  padding: 5rem;
+}
+
+.formFieldset {
+  border: none;
+}
+
+.formLabel {
+  display: block;
+}
+
+.formInput {
+  display: block;
+  width: 100%;
+  margin: 1.5rem 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: medium;
+}
+
+.formButton {
+  display: block;
+  padding: 0.5rem;
+  margin: 1rem auto;
+}

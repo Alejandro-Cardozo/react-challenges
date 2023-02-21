@@ -1,0 +1,31 @@
+.details {
+  display: flex;
+  column-gap: 5rem;
+  max-width: 70rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.item {
+  font-size: var(--size-4);
+  font-weight: normal;
+}
+
+.item > p {
+  margin: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.navArrow {
+  filter: drop-shadow(1px 1px 4px rgb(0 0 0 / 0.4));
+}
+
+.value {
+  margin-left: .8rem;
+}
+
+@media (max-width: 56.25em) {
+  .details {
+    max-width: 30rem;
+  }
+}

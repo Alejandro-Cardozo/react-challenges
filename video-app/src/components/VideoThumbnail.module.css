@@ -1,0 +1,6 @@
+.thumbnail {
+  width: 20rem;
+  margin: 3rem;
+  cursor: pointer;
+  font-size: var(--size-3)
+}

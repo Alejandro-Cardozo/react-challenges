@@ -1,0 +1,35 @@
+.card {
+  padding: 2rem;
+  border-right: 1px solid var(--color-grey-50);
+  border-left: 1px solid var(--color-grey-50);
+  margin-top: -1px;
+  margin-left: -1px;
+  min-width: 20rem;
+}
+
+.card:hover {
+  background-color: #ffffff44;
+}
+
+.card > * {
+  margin: 1rem;
+}
+
+.temperatures {
+  display: flex;
+}
+
+.temperatures > * {
+  margin: 0 1.5rem 0 0;
+}
+
+.temperatures > h5 {
+  color: var(--color-grey-100);
+  align-self: center;
+}
+
+@media (max-width: 56.25em) {
+  .card {
+    border: none
+  }
+}
