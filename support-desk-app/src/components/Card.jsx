@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import classes from './Card.module.css';
 
 const Card = ({ user }) => {
+  //TODO: Create a modal component for sending messages
   if (!user) {
     return <p>Loading...</p>;
   }
@@ -29,10 +30,10 @@ const Card = ({ user }) => {
           {userData.gender === 'female' ? '♀' : '♂'} {userData.age}
         </span>
         <h3 className={classes.title}>{userData.completeName} </h3>
-        <p className='email'>{userData.email.replace('example', 'ourteam')}</p>
-        <p className='number'>{userData.number}</p>
+        <p>{userData.email.replace('example', 'ourteam')}</p>
+        <p>{userData.number}</p>
       </div>
-      <div className='actions'>
+      <div>
         <a href={`mailto:${userData.email.replace('example', 'ourteam')}`}>
           <button className={classes.btn}>Send a message</button>
         </a>
