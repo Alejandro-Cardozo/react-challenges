@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 import useTrack from '../hooks/useTrack'
-import { tracks } from '../../data/tracks'
+import { tracks } from '../data/tracks'
 import usePlayAnimation from '../hooks/usePlayingAnimation'
 
 // Components
