@@ -1,0 +1,7 @@
+.box {
+  border-top: 1px solid slategray;
+}
+
+.box:first-child {
+  border: none;
+}
