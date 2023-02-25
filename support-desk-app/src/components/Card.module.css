@@ -1,0 +1,65 @@
+.card {
+  width: 35rem;
+  height: 45rem;
+  padding: 2.5rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.picture {
+  border-radius: 50%;
+}
+
+.flag {
+  position: relative;
+  top: -3rem;
+  left: 4rem;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+}
+
+.content {
+  text-align: center;
+}
+
+.title {
+  white-space: nowrap;
+}
+
+.age {
+  font-size: 1.2rem;
+  vertical-align: middle;
+  border-radius: 4px;
+  padding: 0.4rem;
+  color: #eee;
+  font-weight: bold;
+}
+
+.female {
+  background-color: rgb(219, 67, 163);
+}
+
+.male {
+  background-color: rgb(90, 90, 223);
+}
+
+.btn {
+  padding: 1rem;
+  font-weight: bold;
+  margin: 1rem;
+  color: #eee;
+  background-color: steelblue;
+  border: none;
+  border-radius: 1rem;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: rgb(100, 161, 211);
+}
