@@ -4,6 +4,7 @@ import CommentList from '../components/CommentList';
 import NewComment from '../components/NewComment';
 import videos from '../data/videos';
 import YouTube from 'react-youtube';
+import Header from '../components/Header';
 
 const VideoPage = () => {
   const { videoId } = useParams();
@@ -30,16 +31,23 @@ const VideoPage = () => {
     },
   };
 
-  const youtube = !width ? <p>Loading...</p> : <YouTube videoId={youtubeId} title={title} opts={opts} />
+  const youtube = !width ? (
+    <p>Loading...</p>
+  ) : (
+    <YouTube videoId={youtubeId} title={title} opts={opts} />
+  );
   return (
-    <div className='container'>
-      {youtube}
-      <h2>{title}</h2>
-      <div className='commentList'>
-        <NewComment videoId={videoId} />
-        <CommentList videoId={videoId} />
+    <>
+      <Header />
+      <div className='container'>
+        {youtube}
+        <h2>{title}</h2>
+        <div className='commentList'>
+          <NewComment videoId={videoId} />
+          <CommentList videoId={videoId} />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

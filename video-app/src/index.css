@@ -118,12 +118,11 @@ button {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: var(--color-primary-600);
 }
 
 .container h1 {
-  margin: 5rem 0;
-  font-size: var(--size-16);
+  margin-bottom: 4rem;
+  font-size: calc(var(--size-16) - var(--size-6));
   text-align: center;
 }
 
