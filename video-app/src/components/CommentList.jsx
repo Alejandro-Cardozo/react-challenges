@@ -6,8 +6,7 @@ const CommentList = ({ videoId }) => {
   const commentsContext = useContext(CommentsContext);
 
   const comments = commentsContext.comments
-    .filter((comment) => comment.videoId === videoId)
-    .sort((a, b) => new Date(a.date) < new Date(b.date) ? 1 : -1);
+    .filter((comment) => comment.videoId === videoId).reverse()
 
   if (!comments) {
     return <p>There are no comments for this video yet.</p>;

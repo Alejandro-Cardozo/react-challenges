@@ -12,7 +12,7 @@ const VideoThumbnail = ({ video }) => {
   return (
     <div onClick={handleClick} className={classes.thumbnail}>
       <figure>
-        <img src={thumbnail} alt={title} style={{width:'100%'}} />
+        <img src={thumbnail} alt={title} />
         <figcaption>{title}</figcaption>
       </figure>
     </div>

@@ -21,7 +21,7 @@ const NewComment = ({ videoId }) => {
       <form className={classes.commentForm} onSubmit={submitHandler}>
         <fieldset className={classes.formFieldset}>
           <label htmlFor='name' className={classes.formLabel}>
-            Your Name
+            Nombre
             <input
               className={classes.formInput}
               type='text'
@@ -29,26 +29,28 @@ const NewComment = ({ videoId }) => {
               id='name'
               value={userName}
               required
+              maxLength={40}
               onChange={(e) => setUserName(e.target.value)}
             />
           </label>
         </fieldset>
         <fieldset className={classes.formFieldset}>
           <label htmlFor='comment' className={classes.formLabel}>
-            Your Comment
+            Comentario
             <textarea
               name='comment'
               className={classes.formInput}
               id='comment'
-              rows='10'
+              rows='4'
               value={comment}
               placeholder='Escribe algo...'
               required
+              maxLength={250}
               onChange={(e) => setComment(e.target.value)}
             ></textarea>
           </label>
         </fieldset>
-        <button className={classes.formButton}>Add Comment</button>
+        <button className={classes.formButton}>Comentar</button>
       </form>
     </div>
   );

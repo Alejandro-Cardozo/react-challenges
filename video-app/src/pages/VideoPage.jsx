@@ -1,4 +1,5 @@
 import { Navigate, useParams } from 'react-router-dom';
+import useWindowSize from '../hooks/useWindowSize';
 import CommentList from '../components/CommentList';
 import NewComment from '../components/NewComment';
 import videos from '../data/videos';
@@ -15,21 +16,24 @@ const VideoPage = () => {
   }
 
   const { title, youtubeId } = video;
+  const [width] = useWindowSize();
 
   const opts = {
-    height: '500',
-    width: '880',
+    height: width / 3,
+    width: width / 2,
     title: title,
     frameBorder: 0,
     allowFullScreen: true,
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
-      autoplay: 1,
+      autoplay: 0,
     },
   };
+
+  const youtube = !width ? <p>Loading...</p> : <YouTube videoId={youtubeId} title={title} opts={opts} />
   return (
     <div className='container'>
-      <YouTube videoId={youtubeId} title={title} opts={opts} />
+      {youtube}
       <h2>{title}</h2>
       <div className='commentList'>
         <NewComment videoId={videoId} />

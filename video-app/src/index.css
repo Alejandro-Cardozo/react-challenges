@@ -66,8 +66,8 @@ body {
   --size-40: 16rem;
 
   margin: 0;
-  background-color: var(--color-grey-50);
-  color: #252525;
+  background-color: var(--color-primary-700);
+  color: var(--color-grey-50);
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   font-size: 1.6rem;
@@ -118,18 +118,37 @@ button {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: var(--color-primary-600);
+}
+
+.container h1 {
+  margin: 5rem 0;
+  font-size: var(--size-16);
+  text-align: center;
 }
 
 .videoList {
   display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0 10rem;
 }
 
 .commentList {
-  width: 80rem;
+  width: 80%;
+  max-width: 90rem;
+  background-color: var(--color-primary-400);
 }
 
-.youtube {
-  width: 72rem;
-  height: 40rem;
-  margin-top: 2rem;
+@media (max-width: 768px) {
+  .videoList {
+    flex-wrap: wrap;
+    gap: 4rem;
+    margin: 0 5rem;
+  }
+
+  .commentList {
+    width: 100%;
+    background-color: var(--color-primary-400);
+  }
 }

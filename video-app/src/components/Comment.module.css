@@ -1,7 +1,12 @@
 .box {
-  border-top: 1px solid slategray;
+  padding: 2rem;
+  word-wrap: break-word;
 }
 
 .box:first-child {
   border: none;
+}
+
+.box:nth-child(2n-1) {
+  background-color: var(--color-primary-500);
 }
