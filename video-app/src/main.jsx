@@ -11,10 +11,12 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <MainPage />,
+    errorElement: <NotFound text='page' />,
   },
   {
     path: '/watch/:videoId',
     element: <VideoPage />,
+    errorElement: <NotFound NotFound text='video' />,
   },
   {
     path: '/404',

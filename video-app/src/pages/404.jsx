@@ -1,14 +1,19 @@
-const NotFound = () => {
+import Header from '../components/Header';
+
+const NotFound = ({ text }) => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
-    >
-      <h1>This video doesn't exist!</h1>
-    </div>
+    <>
+      <Header />
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <h1>This {text || 'page'} doesn't exist!</h1>
+      </div>
+    </>
   );
 };
 

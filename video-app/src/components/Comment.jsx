@@ -8,7 +8,7 @@ const Comment = ({ data }) => {
       <h3>
         {userName}{' '}
         <span
-          style={{ fontSize: '.8rem', color: 'DarkSlateGray', fontWeight: 200 }}
+          style={{ fontSize: '.8rem', color: 'ghostwhite', fontWeight: 200 }}
         >
           {date}
         </span>
