@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?Roboto+Slab:wght@300;400;500&family=Source+Serif+Pro:wght@300;400&display=swap');
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+@media (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
+}
+
+body {
+  font-family: 'Source Serif Pro', serif;
+  font-weight: 300;
+  font-size: 2rem;
+  line-height: 1.7;
+  background-color: rgb(216, 221, 225);
+  color: #4b4a5d;
+  padding: 3rem;
+}
+
+h1,
+p,
+ul,
+ol {
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+h2 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+h3,
+h4,
+h5 {
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.team {
+  display: flex;
+  margin: 2rem;
+  margin-top: 5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
