@@ -28,4 +28,8 @@
   .details {
     max-width: 30rem;
   }
+
+  .item {
+    font-size: var(--size-5)
+  }
 }
