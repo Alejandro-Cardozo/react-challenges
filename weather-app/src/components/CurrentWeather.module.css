@@ -35,6 +35,9 @@
 }
 
 @media (max-width: 56.25em) {
+  .main {
+    margin-top: 8rem;
+  }
   .icon {
     scale: 0.75;
   }
