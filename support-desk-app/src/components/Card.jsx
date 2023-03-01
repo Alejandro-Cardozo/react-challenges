@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import classes from './Card.module.css'
 
-const Card = ({ user }) => {
+const Card = ({ user, onSendMessage }) => {
   if (!user) {
     return <p>Loading...</p>
   }
@@ -33,15 +33,16 @@ const Card = ({ user }) => {
         <p>{userData.number}</p>
       </div>
       <div>
-        <a href={`mailto:${userData.email.replace('example', 'ourteam')}`}>
-          <button className={classes.btn}>Send a message</button>
-        </a>
+        <button className={classes.btn} onClick={onSendMessage.bind(null, user.name.first)}>
+          Send a message
+        </button>
       </div>
     </div>
   )
 }
 
 Card.propTypes = {
-  user: PropTypes.object.isRequired
+  user: PropTypes.object.isRequired,
+  onSendMessage: PropTypes.func.isRequired
 }
 export default Card
