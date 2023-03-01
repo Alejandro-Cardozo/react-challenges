@@ -1,40 +1,80 @@
-.modal {
+.modalBox {
   position: fixed;
-  top: 30vh;
-  left: calc(50% - 20rem);
-  width: 40rem;
+  top: 20vh;
+  left: calc(50% - 25rem);
+  width: 50rem;
+  padding: 2rem 4rem;
   z-index: 100;
   overflow: hidden;
-}
-
-.modalBox {
-  width: 40vw;
   background-color: aliceblue;
 }
 
 .modalTitle {
+  font-size: 2rem;
   font-weight: bold;
-  font-size: large;
+  margin: 1rem 0;
 }
 
-.modalText {
-  padding: 4rem 0;
+.modalForm {
+  padding: 2rem 0;
+}
+
+.modalForm label {
+  display: block;
+  font-size: 1.5rem;
+}
+
+.modalForm input {
+  width: 100%;
+  height: 3rem;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.modalForm textarea {
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  resize: none;
 }
 
 .modalActions {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .modalBtn {
-  padding: 1rem;
-  font-weight: bold;
-  margin: 1rem;
   color: #eee;
   background-color: steelblue;
-  border: none;
   border-radius: 1rem;
 }
 
+.cancelBtn {
+  position: absolute;
+  top: 0;
+  right: 0.5rem;
+  z-index: 101;
+  font-size: large;
+  color: #ccc;
+  background-color: transparent;
+}
+
+.btn {
+  padding: 1rem;
+  font-weight: bold;
+  border: none;
+}
+
 .modalBtn:hover {
-  cursor: pointer;
   background-color: rgb(100, 161, 211);
+}
+
+.cancelBtn:hover {
+  color: #aaa;
+}
+
+.btn:hover {
+  cursor: pointer;
 }
