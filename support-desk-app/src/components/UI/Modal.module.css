@@ -1,0 +1,40 @@
+.modal {
+  position: fixed;
+  top: 30vh;
+  left: calc(50% - 20rem);
+  width: 40rem;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.modalBox {
+  width: 40vw;
+  background-color: aliceblue;
+}
+
+.modalTitle {
+  font-weight: bold;
+  font-size: large;
+}
+
+.modalText {
+  padding: 4rem 0;
+}
+
+.modalActions {
+}
+
+.modalBtn {
+  padding: 1rem;
+  font-weight: bold;
+  margin: 1rem;
+  color: #eee;
+  background-color: steelblue;
+  border: none;
+  border-radius: 1rem;
+}
+
+.modalBtn:hover {
+  cursor: pointer;
+  background-color: rgb(100, 161, 211);
+}

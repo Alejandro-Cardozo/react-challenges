@@ -1,5 +1,7 @@
-import PropTypes from 'prop-types';
-import Card from './Card';
+import { createPortal } from 'react-dom'
+import PropTypes from 'prop-types'
+import Card from './Card'
+import Modal from './UI/Modal'
 
 const TeamMembers = ({ users }) => {
   return (
@@ -7,12 +9,13 @@ const TeamMembers = ({ users }) => {
       {users.map((user) => (
         <Card key={user.login.uuid} user={user} />
       ))}
+      {createPortal(<Modal />, document.getElementById('modal'))}
     </section>
-  );
-};
+  )
+}
 
 TeamMembers.propTypes = {
-  users: PropTypes.array,
-};
+  users: PropTypes.array
+}
 
-export default TeamMembers;
+export default TeamMembers
