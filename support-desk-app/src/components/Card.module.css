@@ -19,8 +19,8 @@
   top: -3rem;
   left: 4rem;
   border-radius: 50%;
-  width: 3rem;
-  height: 3rem;
+  max-width: 3rem;
+  min-height: 3rem;
   object-fit: cover;
 }
 

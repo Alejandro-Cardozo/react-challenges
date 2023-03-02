@@ -1,8 +1,11 @@
+// React stuff
 import { createPortal } from 'react-dom'
+import { useState } from 'react'
 import PropTypes from 'prop-types'
+
+// Components
 import Card from './Card'
 import Modal from './UI/Modal'
-import { useState } from 'react'
 
 const TeamMembers = ({ users }) => {
   const [showModal, setShowModal] = useState(false)

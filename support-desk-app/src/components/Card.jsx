@@ -1,4 +1,7 @@
+// React stuff
 import PropTypes from 'prop-types'
+
+// Styles
 import classes from './Card.module.css'
 
 const Card = ({ user, onSendMessage }) => {

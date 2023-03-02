@@ -1,8 +1,13 @@
+// React stuff
 import PropTypes from 'prop-types'
-import Overlay from './Overlay'
-
-import classes from './Modal.module.css'
 import { useEffect, useState } from 'react'
+
+// Components
+import Overlay from './Overlay'
+import ModalForm from './ModalForm'
+
+// Styles
+import classes from './Modal.module.css'
 
 const Modal = ({ name, onCloseModal }) => {
   const [messageSent, setMessageSent] = useState(false)
@@ -24,30 +29,12 @@ const Modal = ({ name, onCloseModal }) => {
     }
   }, [messageSent])
 
-  const modal_form = (
-    <form className={classes.modalForm} onSubmit={submitHandler}>
-      <label htmlFor='name'>Your name</label>
-      <input type='text' name='name' id='name' required autoFocus maxLength={30} />
-      <label htmlFor='message'>Message</label>
-      <textarea
-        type='text'
-        name='message'
-        id='message'
-        rows={5}
-        required
-        maxLength={150}
-      ></textarea>
-      <div className={classes.modalActions}>
-        <button className={`${classes.btn} ${classes.modalBtn}`}>Send Message</button>
-      </div>
-    </form>
-  )
-
   const modal_success = isSending ? (
     <p>Sending message...</p>
   ) : (
     <p>Success! You can close this window now.</p>
   )
+
   const modal_title = isSending
     ? 'Please Wait'
     : messageSent
@@ -59,7 +46,7 @@ const Modal = ({ name, onCloseModal }) => {
       <div className={classes.modal} onClick={(e) => e.stopPropagation()}>
         <div className={classes.modalBox}>
           <h3 className={classes.modalTitle}>{modal_title}</h3>
-          {messageSent ? modal_success : modal_form}
+          {messageSent ? modal_success : <ModalForm onSubmit={submitHandler} />}
           <button
             className={`${classes.btn} ${classes.cancelBtn}`}
             onClick={onCloseModal.bind(null, null)}

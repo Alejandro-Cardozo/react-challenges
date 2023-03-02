@@ -1,4 +1,7 @@
+// React stuff
 import PropTypes from 'prop-types'
+
+// Styles
 import classes from './Overlay.module.css'
 
 const Overlay = (props) => {

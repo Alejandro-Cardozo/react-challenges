@@ -1,5 +1,8 @@
-import TeamMembers from './components/TeamMembers'
+// React stuff
 import useFetch from './hooks/useFetch'
+
+// Components
+import TeamMembers from './components/TeamMembers'
 
 const base_url =
   'https://randomuser.me/api/?results=8&inc=name,gender,dob,email,phone,picture,location,nat,login&nat=us,fr,gb,br,de,es,mx'
