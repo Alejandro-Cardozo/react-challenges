@@ -1,0 +1,43 @@
+.modalForm {
+  padding: 2rem 0;
+}
+
+.modalForm label {
+  display: block;
+  font-size: 1.5rem;
+}
+
+.modalForm input {
+  width: 100%;
+  height: 3rem;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.modalForm textarea {
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  resize: none;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modalBtn {
+  color: #eee;
+  background-color: steelblue;
+  border-radius: 1rem;
+  padding: 1rem;
+  font-weight: bold;
+  border: none;
+}
+
+.modalBtn:hover {
+  background-color: rgb(100, 161, 211);
+  cursor: pointer;
+}

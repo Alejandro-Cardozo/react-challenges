@@ -1,10 +1,12 @@
-import PropTypes from 'prop-types';
-import classes from './Card.module.css';
+// React stuff
+import PropTypes from 'prop-types'
 
-const Card = ({ user }) => {
-  //TODO: Create a modal component for sending messages
+// Styles
+import classes from './Card.module.css'
+
+const Card = ({ user, onSendMessage }) => {
   if (!user) {
-    return <p>Loading...</p>;
+    return <p>Loading...</p>
   }
   const userData = {
     completeName: `${user.name.first} ${user.name.last}` || '',
@@ -14,8 +16,8 @@ const Card = ({ user }) => {
     picture: user.picture.large || '',
     country: user.location.country || '',
     gender: user.gender || '',
-    flag: `https://flagcdn.com/w80/${user.nat.toLowerCase()}.png`,
-  };
+    flag: `https://flagcdn.com/w80/${user.nat.toLowerCase()}.png`
+  }
 
   return (
     <div className={classes.card}>
@@ -34,15 +36,16 @@ const Card = ({ user }) => {
         <p>{userData.number}</p>
       </div>
       <div>
-        <a href={`mailto:${userData.email.replace('example', 'ourteam')}`}>
-          <button className={classes.btn}>Send a message</button>
-        </a>
+        <button className={classes.btn} onClick={onSendMessage.bind(null, user.name.first)}>
+          Send a message
+        </button>
       </div>
     </div>
-  );
-};
+  )
+}
 
 Card.propTypes = {
   user: PropTypes.object.isRequired,
-};
-export default Card;
+  onSendMessage: PropTypes.func.isRequired
+}
+export default Card
