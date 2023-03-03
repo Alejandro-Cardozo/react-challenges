@@ -1,7 +1,11 @@
 import icons from './icons'
 
-function ActionButton({ action }) {
-  return <button className='round-btn'>{icons[action]}</button>
+function ActionButton ({ action = 'rock', onActionSelected }) {
+  return (
+    <button className='round-btn' onClick={() => onActionSelected(action)}>
+      {icons[action]}
+    </button>
+  )
 }
 
 export default ActionButton

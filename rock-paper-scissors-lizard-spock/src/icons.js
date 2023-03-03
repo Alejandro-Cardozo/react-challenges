@@ -1,4 +1,5 @@
 const icons = {
+  '': '',
   rock: '✊🏻',
   paper: '✋🏻',
   scissors: '✌🏻',
