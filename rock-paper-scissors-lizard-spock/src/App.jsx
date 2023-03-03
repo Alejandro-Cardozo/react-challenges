@@ -1,3 +1,6 @@
+import Player from './Player'
+import ActionButton from './ActionButton'
+
 import './App.css'
 
 function App() {
@@ -6,21 +9,15 @@ function App() {
       <h1>¡Rock, Paper, Scissors, Lizard, Spock!</h1>
       <div>
         <div className='container'>
-          <div className='player'>
-            <div className='score'>Player 1: 0</div>
-            <div className='action player-one'>✊🏻</div>
-          </div>
-          <div className='player'>
-            <div className='score'>Player 2: 0</div>
-            <div className='action player-two'>🖖🏻</div>
-          </div>
+          <Player id={1} name={'Player 1'} score={0} action='spock' />
+          <Player id={2} name={'Computer'} score={0} action='scissors' />
         </div>
         <div>
-          <button className='round-btn'>✊🏻</button>
-          <button className='round-btn'>✋🏻</button>
-          <button className='round-btn'>✌🏻</button>
-          <button className='round-btn'>🤌🏻</button>
-          <button className='round-btn'>🖖🏻</button>
+          <ActionButton action='rock' />
+          <ActionButton action='paper' />
+          <ActionButton action='scissors' />
+          <ActionButton action='lizard' />
+          <ActionButton action='spock' />
         </div>
         <h2>Player 1 Wins!</h2>
       </div>
