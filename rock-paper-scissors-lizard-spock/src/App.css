@@ -1,3 +1,60 @@
 .center {
   text-align: center;
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player {
+  margin: 1rem;
+  width: 12rem;
+  height: 12rem;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--text-primary-color);
+  color: var(--text-primary-color);
+}
+
+.round-btn {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: none;
+  margin: 2px;
+  cursor: pointer;
+  background-color: var(--primary-color-dark);
+  color: var(--text-primary-color);
+  font-size: 2rem;
+  transform: rotate(90deg) scaleX(-1);
+}
+
+.round-btn:hover {
+  background-color: var(--primary-color-light);
+}
+
+.score {
+  padding: 1px;
+  font-size: small;
+  font-weight: bold;
+  background-color: var(--primary-color-dark);
+}
+
+.action {
+  font-size: 5rem;
+  text-shadow: 0 0 2px var(--primary-color-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.player-one {
+  transform: rotate(90deg) scaleX(-1);
+}
+
+.player-two {
+  transform: rotate(-90deg);
+}

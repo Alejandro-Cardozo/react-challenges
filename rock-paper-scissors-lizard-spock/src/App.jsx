@@ -1,26 +1,26 @@
 import './App.css'
 
-function App () {
+function App() {
   return (
     <div className='center'>
-      <h1>Rock, Paper, Scissors, Lizard, Spock</h1>
+      <h1>¡Rock, Paper, Scissors, Lizard, Spock!</h1>
       <div>
-        <div>
-          <div>
-            <div>Player 1: 0</div>
-            <div />
+        <div className='container'>
+          <div className='player'>
+            <div className='score'>Player 1: 0</div>
+            <div className='action player-one'>✊🏻</div>
           </div>
-          <div>
-            <div>Player 2: 0</div>
-            <div />
+          <div className='player'>
+            <div className='score'>Player 2: 0</div>
+            <div className='action player-two'>🖖🏻</div>
           </div>
         </div>
         <div>
-          <button>Rock</button>
-          <button>Paper</button>
-          <button>Scissors</button>
-          <button>Lizard</button>
-          <button>Spock</button>
+          <button className='round-btn'>✊🏻</button>
+          <button className='round-btn'>✋🏻</button>
+          <button className='round-btn'>✌🏻</button>
+          <button className='round-btn'>🤌🏻</button>
+          <button className='round-btn'>🖖🏻</button>
         </div>
         <h2>Player 1 Wins!</h2>
       </div>
