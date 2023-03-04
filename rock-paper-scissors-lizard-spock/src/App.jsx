@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 import Player from './Player'
 import ActionButton from './ActionButton'
+import ShowWinner from './ShowWinner'
 
 import './App.css'
 
@@ -37,6 +38,7 @@ function App () {
   const [playerScore, setPlayerScore] = useState(0)
   const [computerAction, setComputerAction] = useState('')
   const [computerScore, setComputerScore] = useState(0)
+  const [winner, setWinner] = useState('')
 
   const onActionSelected = (selectedAction) => {
     const computerAction = randomAction()
@@ -44,10 +46,11 @@ function App () {
     setPlayerAction(selectedAction)
     setComputerAction(computerAction)
 
-    const winner = selectWinner(selectedAction, computerAction)
-    if (winner > 0) {
+    const newWinner = selectWinner(selectedAction, computerAction)
+    setWinner(newWinner)
+    if (newWinner > 0) {
       setPlayerScore((prev) => prev + 1)
-    } else if (winner < 0) {
+    } else if (newWinner < 0) {
       setComputerScore((prev) => prev + 1)
     }
   }
@@ -67,7 +70,7 @@ function App () {
           <ActionButton action='lizard' onActionSelected={onActionSelected} />
           <ActionButton action='spock' onActionSelected={onActionSelected} />
         </div>
-        <h2>Player 1 Wins!</h2>
+        <ShowWinner winner={winner} />
       </div>
     </div>
   )
