@@ -5,6 +5,18 @@ import ActionButton from './ActionButton'
 import ShowWinner from './ShowWinner'
 
 import './App.css'
+import Button3D from './Button3D'
+
+import spock from './images/spock1.avif'
+import paper from './images/paper1.avif'
+import scissors from './images/scissors1.avif'
+import rock from './images/rock1.avif'
+import lizard from './images/lizard1.avif'
+import spockFallback from './images/spock1.webp'
+import paperFallback from './images/paper1.webp'
+import scissorsFallback from './images/scissors1.webp'
+import rockFallback from './images/rock1.webp'
+import lizardFallback from './images/lizard1.webp'
 
 const rules = {
   rock: ['lizard', 'scissors'],
@@ -71,6 +83,13 @@ function App () {
           <ActionButton action='spock' onActionSelected={onActionSelected} />
         </div>
         <ShowWinner winner={winner} />
+      </div>
+      <div className="buttons">
+        <Button3D image={rock} fallbackImage={rockFallback} text='Rock' />
+        <Button3D image={paper} fallbackImage={paperFallback} text='Paper' />
+        <Button3D image={scissors} fallbackImage={scissorsFallback} text='Scissors' />
+        <Button3D image={lizard} fallbackImage={lizardFallback} text='Lizard' />
+        <Button3D image={spock} fallbackImage={spockFallback} text='Spock' />
       </div>
     </div>
   )
