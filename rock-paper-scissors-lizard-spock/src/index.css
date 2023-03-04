@@ -1,7 +1,7 @@
 :root {
-  --primary-color: #d35400;
-  --primary-color-dark: #c0392b;
-  --primary-color-light: #f39c12;
+  --primary-color: hsl(190, 48%, 26%);
+  --primary-color-dark:hsl(190, 60%, 6%);
+  --primary-color-light: hsl(180, 26%, 46%);
   --text-primary-color: #fff;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -19,6 +19,10 @@
   -webkit-text-size-adjust: 100%;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html {
   background-color: var(--primary-color);
 }
@@ -31,15 +35,17 @@ body {
 }
 
 h1 {
-  font-size: 2.4rem;
+  font-size: 3.2rem;
   margin: 0;
+  text-align: center;
   background-color: var(--primary-color-dark);
   color: var(--text-primary-color);
-  padding: .8rem;
+  padding: 4.8rem;
+  border-radius: 1rem;
   line-height: 1.1;
 }
 
 h2 {
-  font-size: 1.8rem;
+  font-size: 2.8rem;
   color: var(--text-primary-color);
 }

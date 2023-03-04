@@ -4,7 +4,7 @@ const icons = {
   paper: '✋🏻',
   scissors: '✌🏻',
   lizard: '🤌🏻',
-  spock: '🖖🏻'
+  spock: '🖖🏻',
 }
 
 export default icons

@@ -7,7 +7,7 @@ function Player ({ id = 1, name = 'Player', score = 0, action = 'rock' }) {
       <div className='score'>
         {name}: {score}
       </div>
-      <div className={actionClasses}>{icons[action]}</div>
+      {icons[action] ? <div className={actionClasses}>{icons[action] || '👈🏻'}</div> : <div className='action'>❔</div>}
     </div>
   )
 }

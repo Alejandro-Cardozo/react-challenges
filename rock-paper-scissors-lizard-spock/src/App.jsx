@@ -1,7 +1,6 @@
 import { useState } from 'react'
 
 import Player from './Player'
-import ActionButton from './ActionButton'
 import ShowWinner from './ShowWinner'
 
 import './App.css'
@@ -37,11 +36,11 @@ function selectWinner(action1, action2) {
 }
 
 function App() {
-  const [playerAction, setPlayerAction] = useState('')
+  const [playerAction, setPlayerAction] = useState('default')
   const [playerScore, setPlayerScore] = useState(0)
-  const [computerAction, setComputerAction] = useState('')
+  const [computerAction, setComputerAction] = useState('default')
   const [computerScore, setComputerScore] = useState(0)
-  const [winner, setWinner] = useState('')
+  const [winner, setWinner] = useState(null)
 
   const onActionSelected = (selectedAction) => {
     const computerAction = randomAction()
@@ -63,11 +62,18 @@ function App() {
       <h1>¡Rock, Paper, Scissors, Lizard, Spock!</h1>
       <div>
         <div className='container'>
-          <Player id={1} name='Player 1' score={playerScore} action={playerAction} />
+          <Player id={1} name='You' score={playerScore} action={playerAction} />
           <Player id={2} name='Computer' score={computerScore} action={computerAction} />
         </div>
-        <ShowWinner winner={winner} />
       </div>
+      {winner !== null ? (
+        <ShowWinner winner={winner} />
+      ) : (
+        <h2>
+          <div style={{ display: 'inline-block' }}>👇🏻</div> Select your weapon{' '}
+          <div style={{ display: 'inline-block', transform: 'scaleX(-1)' }}>👇🏻</div>
+        </h2>
+      )}
       <div className='buttons'>
         {images.map((img) => (
           <Button3D

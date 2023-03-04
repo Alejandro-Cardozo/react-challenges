@@ -43,7 +43,6 @@
   padding: 0;
   border-radius: 50%;
   font-size: 1.25rem;
-  color: white;
   background: hsl(190, 48%, 26%);
   will-change: transform;
   transform: translateY(-4px);
