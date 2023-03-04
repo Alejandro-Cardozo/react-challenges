@@ -1,4 +1,5 @@
-import icons from './icons'
+// Data
+import { icons } from '../data/data'
 
 function Player ({ id = 1, name = 'Player', score = 0, action = 'rock' }) {
   const actionClasses = id === 1 ? 'action player-one' : 'action player-two'

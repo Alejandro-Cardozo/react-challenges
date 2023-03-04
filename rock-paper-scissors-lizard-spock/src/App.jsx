@@ -1,58 +1,34 @@
+// Hooks
 import { useState } from 'react'
-
-import Player from './Player'
-import ShowWinner from './ShowWinner'
-
-import './App.css'
-import Button3D from './Button3D'
-
+// Components
+import Player from './components/Player'
+import ShowWinner from './components/ShowWinner'
+import Button3D from './components/Button3D'
+// Helpers and data
 import { images } from './images'
+import { rules } from './data/data'
+import { selectWinner, randomAction } from './helpers/helpers'
+// Styles
+import './App.css'
 
-const rules = {
-  rock: ['lizard', 'scissors'],
-  paper: ['spock', 'rock'],
-  scissors: ['lizard', 'paper'],
-  lizard: ['spock', 'paper'],
-  spock: ['rock', 'scissors']
-}
-
-function randomAction() {
-  const keys = Object.keys(rules)
-  const index = Math.floor(Math.random() * keys.length)
-
-  return keys[index]
-}
-
-function selectWinner(action1, action2) {
-  if (action1 === action2) {
-    return 0
-  } else if (rules[action1].includes(action2)) {
-    return 1
-  } else if (rules[action2].includes(action1)) {
-    return -1
-  } else {
-    return null
-  }
-}
-
-function App() {
+function App () {
   const [playerAction, setPlayerAction] = useState('default')
   const [playerScore, setPlayerScore] = useState(0)
   const [computerAction, setComputerAction] = useState('default')
   const [computerScore, setComputerScore] = useState(0)
-  const [winner, setWinner] = useState(null)
+  const [winner, setWinner] = useState(0)
 
   const onActionSelected = (selectedAction) => {
-    const computerAction = randomAction()
+    const computerAction = randomAction(rules)
 
     setPlayerAction(selectedAction)
     setComputerAction(computerAction)
 
-    const newWinner = selectWinner(selectedAction, computerAction)
+    const newWinner = selectWinner(selectedAction, computerAction, rules)
     setWinner(newWinner)
-    if (newWinner > 0) {
+    if (newWinner === 1) {
       setPlayerScore((prev) => prev + 1)
-    } else if (newWinner < 0) {
+    } else if (newWinner === 2) {
       setComputerScore((prev) => prev + 1)
     }
   }
@@ -66,18 +42,11 @@ function App() {
           <Player id={2} name='Computer' score={computerScore} action={computerAction} />
         </div>
       </div>
-      {winner !== null ? (
-        <ShowWinner winner={winner} />
-      ) : (
-        <h2>
-          <div style={{ display: 'inline-block' }}>👇🏻</div> Select your weapon{' '}
-          <div style={{ display: 'inline-block', transform: 'scaleX(-1)' }}>👇🏻</div>
-        </h2>
-      )}
+      <ShowWinner winner={winner} />
       <div className='buttons'>
         {images.map((img) => (
           <Button3D
-            id={img.id}
+            key={img.id}
             image={img.image}
             fallbackImage={img.fallbackImage}
             text={img.title}
