@@ -20,3 +20,40 @@
   align-items: center;
   justify-content: center;
 }
+
+@media only screen and (max-width: 1024px) {
+  .buttons {
+    gap: 3rem;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .center {
+    justify-content: center;
+    gap: 3rem;
+    height: auto;
+  }
+  
+  .container {
+    gap: 2rem;
+  }
+
+  .buttons {
+    gap: 2rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .center {
+    gap: 1.5rem;
+  }
+
+  .container {
+    gap: 1rem;
+  }
+
+  .buttons {
+    gap: 1rem;
+  }
+}
