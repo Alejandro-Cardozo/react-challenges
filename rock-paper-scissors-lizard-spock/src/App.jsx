@@ -9,9 +9,9 @@ import { images } from './images'
 import { rules } from './data/data'
 import { selectWinner, randomAction } from './helpers/helpers'
 // Styles
-import './App.css'
+import classes from './App.module.css'
 
-function App () {
+function App() {
   const [playerAction, setPlayerAction] = useState('default')
   const [playerScore, setPlayerScore] = useState(0)
   const [computerAction, setComputerAction] = useState('default')
@@ -34,16 +34,16 @@ function App () {
   }
 
   return (
-    <div className='center'>
+    <div className={classes.center}>
       <h1>¡Rock, Paper, Scissors, Lizard, Spock!</h1>
       <div>
-        <div className='container'>
+        <div className={classes.container}>
           <Player id={1} name='You' score={playerScore} action={playerAction} />
           <Player id={2} name='Computer' score={computerScore} action={computerAction} />
         </div>
       </div>
       <ShowWinner winner={winner} />
-      <div className='buttons'>
+      <div className={classes.buttons}>
         {images.map((img) => (
           <Button3D
             key={img.id}

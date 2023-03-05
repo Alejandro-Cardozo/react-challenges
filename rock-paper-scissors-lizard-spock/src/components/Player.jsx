@@ -1,14 +1,24 @@
 // Data
 import { icons } from '../data/data'
 
-function Player ({ id = 1, name = 'Player', score = 0, action = 'rock' }) {
-  const actionClasses = id === 1 ? 'action player-one' : 'action player-two'
+// Styles
+import classes from './Player.module.css'
+
+function Player({ id = 1, name = 'Player', score = 0, action = 'rock' }) {
+  const actionClasses =
+    id === 1
+      ? `${classes['action']} ${classes['player-one']}`
+      : `${classes['action']} ${classes['player-two']}`
   return (
-    <div className='player'>
-      <div className='score'>
+    <div className={classes.player}>
+      <div className={classes.score}>
         {name}: {score}
       </div>
-      {icons[action] ? <div className={actionClasses}>{icons[action] || '👈🏻'}</div> : <div className='action'>❔</div>}
+      {icons[action] ? (
+        <div className={actionClasses}>{icons[action] || '👈🏻'}</div>
+      ) : (
+        <div className={classes.action}>❔</div>
+      )}
     </div>
   )
 }
