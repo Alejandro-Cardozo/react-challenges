@@ -11,7 +11,7 @@ import { selectWinner, randomAction } from './helpers/helpers'
 // Styles
 import classes from './App.module.css'
 
-function App() {
+function App () {
   const [playerAction, setPlayerAction] = useState('default')
   const [playerScore, setPlayerScore] = useState(0)
   const [computerAction, setComputerAction] = useState('default')

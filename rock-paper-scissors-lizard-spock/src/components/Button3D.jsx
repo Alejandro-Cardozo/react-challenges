@@ -1,5 +1,5 @@
 // Hooks
-import useSound from 'use-sound';
+import useSound from 'use-sound'
 
 // Utilities
 import onPressButton from '../sounds/onPressButton.ogg'
@@ -8,10 +8,10 @@ import onPressButton from '../sounds/onPressButton.ogg'
 import classes from './Button3D.module.css'
 
 const Button3D = ({ image, fallbackImage, text, onActionSelected }) => {
-  const [play] = useSound(onPressButton);
+  const [play] = useSound(onPressButton)
 
   const buttonHandler = () => {
-    play();
+    play()
     onActionSelected(text)
   }
 
