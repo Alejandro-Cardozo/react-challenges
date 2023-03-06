@@ -1,4 +1,4 @@
-# React Rock, Paper, Scissors, Lizard, Spock App 📋 &nbsp; ![easy](https://img.shields.io/badge/-Easy-brightgreen)
+# React "Rock, Paper, Scissors, Lizard, Spock" App 🖖 &nbsp; ![easy](https://img.shields.io/badge/-Easy-brightgreen)
 
 ## Introduction
 Rock, Paper, Scissors, Lizard, Spock is a game of chance that expands the traditional game of Rock, Paper, Scissors.
@@ -55,5 +55,5 @@ You are asked to build a React app where you can play this game against the CPU.
 ## Final Result 🚀
 &nbsp;
 <p align="center">
-  <img width="50%" src="public/Screenshot.png" alt="Project overview">
+  <img width="80%" src="public/Screenshot.png" alt="Project overview">
 </p>
