@@ -3,20 +3,22 @@ import useSound from 'use-sound'
 
 // Utilities
 import onPressButton from '../sounds/onPressButton.ogg'
+import onReleasedButton from '../sounds/onReleasedButton.ogg'
 
 // Styles
 import classes from './Button3D.module.css'
 
 const Button3D = ({ image, fallbackImage, text, onActionSelected }) => {
-  const [play] = useSound(onPressButton)
-
-  const buttonHandler = () => {
-    play()
-    onActionSelected(text)
-  }
+  const [playPressButton] = useSound(onPressButton)
+  const [playReleaseButton] = useSound(onReleasedButton)
 
   return (
-    <button className={classes.pushable} onClick={buttonHandler}>
+    <button
+      className={classes.pushable}
+      onMouseDown={playPressButton}
+      onMouseUp={playReleaseButton}
+      onClick={() => onActionSelected(text)}
+    >
       <span className={classes.shadow} />
       <span className={classes.edge} />
       <span className={classes.front}>
