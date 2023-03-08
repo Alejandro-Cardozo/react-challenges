@@ -39,6 +39,7 @@
 }
 
 .text {
+  margin: 15px 5px;
   color: #ccc;
 }
 
@@ -49,4 +50,65 @@
   margin: 0;
   padding: 2px;
   line-height: 37px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .title {
+    font-size: 25px;
+    line-height: 30px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .audio-image {
+    min-width: 250px;
+    min-height: 250px;
+    max-width: 250px;
+    max-height: 250px;
+  }
+
+  .text {
+    font-size: 14px;
+  }
+
+  .title {
+    font-size: 21px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .audio-image {
+    min-width: 200px;
+    min-height: 200px;
+    max-width: 200px;
+    max-height: 200px;
+  }
+
+  .text {
+    margin: 12px 3px;
+    font-size: 12px;
+  }
+
+  .title {
+    font-size: 16px;
+    line-height: 25px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .audio-image {
+    min-width: 150px;
+    min-height: 150px;
+    max-width: 150px;
+    max-height: 150px;
+  }
+
+  .text {
+    font-size: 8px;
+  }
+
+  .title {
+    font-size: 12px;
+    line-height: 18px;
+  }
 }

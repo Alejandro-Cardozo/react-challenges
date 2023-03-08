@@ -1,4 +1,4 @@
-.controls button{
+.controls button {
   border: none;
   background-color: transparent;
   margin-right: 40px;
@@ -6,6 +6,32 @@
   cursor: pointer;
 }
 
-.controls button[id="play"]{
+.controls button[id='play'] {
   transform: scale(1.5);
+}
+
+@media only screen and (max-width: 1024px) {
+  .controls button {
+    margin-right: 28px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .controls button {
+    margin-right: 15px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .controls button {
+    margin-right: 8px;
+  }
+
+  .controls > button > svg {
+    font-size: 15px;
+  }
+  
+  .controls button[id='play'] {
+    transform: scale(1.5);
+  }
 }

@@ -27,21 +27,19 @@ const DisplayTrack = ({
       />
       <div className={classes['audio-info']}>
         <div className={classes['audio-image']}>
-          {currentTrack.thumbnail
-            ? (
-              <img src={currentTrack.thumbnail} alt='audio avatar' />
-              )
-            : (
-              <div className={classes['icon-wrapper']}>
-                <span className={classes['audio-icon']}>
-                  <BsMusicNoteBeamed />
-                </span>
-              </div>
-              )}
+          {currentTrack.thumbnail ? (
+            <img src={currentTrack.thumbnail} alt='audio avatar' />
+          ) : (
+            <div className={classes['icon-wrapper']}>
+              <span className={classes['audio-icon']}>
+                <BsMusicNoteBeamed />
+              </span>
+            </div>
+          )}
         </div>
-        <div className={classes.text}>
+        <div>
           <p className={classes.title}>{currentTrack.title}</p>
-          <p>{currentTrack.author}</p>
+          <p className={classes.text}>{currentTrack.author}</p>
         </div>
       </div>
     </>

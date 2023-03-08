@@ -90,3 +90,9 @@
 .volume input[type="range"]:active::-moz-range-thumb {
   transform: scale(1.2);
 }
+
+@media only screen and (max-width: 768px) {
+  .volume > button > svg {
+    font-size: 18px;
+  }
+}
