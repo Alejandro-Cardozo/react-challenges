@@ -1,6 +1,11 @@
 .controls button{
   border: none;
   background-color: transparent;
-  margin-right: 8px;
+  margin-right: 40px;
+  margin-top: 5px;
   cursor: pointer;
+}
+
+.controls button[id="play"]{
+  transform: scale(1.5);
 }

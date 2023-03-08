@@ -38,7 +38,7 @@ const PlayControls = ({
         <IoPlayBackSharp />
       </button>
 
-      <button onClick={togglePlayPause}>
+      <button onClick={togglePlayPause} id='play'>
         {isPlaying ? <IoPauseSharp /> : <IoPlaySharp />}
       </button>
       <button onClick={skipForward}>
