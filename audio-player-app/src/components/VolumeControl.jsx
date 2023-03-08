@@ -4,6 +4,7 @@ import useVolume from '../hooks/useVolume'
 
 // Icons
 import {
+  IoVolumeMute,
   IoVolumeHigh,
   IoVolumeOff,
   IoVolumeMedium,
@@ -24,24 +25,29 @@ const VolumeControl = ({ audioRef, volumeBarRef }) => {
   return (
     <div className={classes.volume}>
       <button onClick={() => setMuteVolume((prev) => !prev)}>
-        {muteVolume || volume < 5
+        {muteVolume
           ? (
-            <IoVolumeOff />
+            <IoVolumeMute />
             )
-          : volume < 35
+          : volume < 5
             ? (
-              <IoVolumeLow />
+              <IoVolumeOff />
               )
-            : volume < 75
+            : volume < 35
               ? (
-                <IoVolumeMedium />
+                <IoVolumeLow />
                 )
-              : (
-                <IoVolumeHigh />
-                )}
+              : volume < 75
+                ? (
+                  <IoVolumeMedium />
+                  )
+                : (
+                  <IoVolumeHigh />
+                  )}
       </button>
       <input
         type='range'
+        className={muteVolume ? 'muted' : ''}
         min={0}
         max={100}
         value={volume}

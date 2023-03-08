@@ -36,6 +36,7 @@
 
 ## Tooling (optional) 🔨
 - [Vite](https://vitejs.dev/) - Next Generation Frontend Tooling
+- [React Icons](https://react-icons.github.io/react-icons) - SVG React icons of popular icon packs using ES6 imports.
 - [Deezer API](https://developers.deezer.com/login?redirect=/api) - Online music streaming platform
 &nbsp;
 

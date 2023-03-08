@@ -91,6 +91,29 @@
   transform: scale(1.2);
 }
 
+/* muted played volume length - Chrome & safari*/
+.volume input[class="muted"]::before {
+  background: #ccc;
+}
+
+/* muted played volume length - firefox */
+.volume input[class="muted"]::-moz-range-progress {
+  background: #ccc;
+}
+
+/* muted slider thumb - chrome and safari */
+.volume input[class="muted"]::-webkit-slider-thumb {
+  background-color: #ccc;
+}
+
+/* muted slider thumb - firefox */
+.volume input[class="muted"]::-moz-range-thumb {
+  height: 8px;
+  width: 8px;
+  border-radius: 0;
+  background: #ccc;
+}
+
 @media only screen and (max-width: 768px) {
   .volume > button > svg {
     font-size: 18px;
