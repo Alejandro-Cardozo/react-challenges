@@ -1,7 +1,7 @@
 .trackItem {
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 10px 15px;
 }
 
 .trackItem:hover {
@@ -60,4 +60,45 @@
 
 .duration {
   color: #ccc;
+}
+
+@media only screen and (max-width: 1200px) {
+  .info > h3 {
+    margin: 4px 0;
+    font-size: 16px;
+  }
+  
+  .info > p {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .duration {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .audio-image {
+    min-width: 75px;
+    min-height: 75px;
+    max-width: 75px;
+    max-height: 75px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .info > h3 {
+    margin: 4px 0;
+    font-size: 14px;
+  }
+  
+  .info > p {
+    font-size: 10px;
+  }
+
+  .duration {
+    font-size: 12px;
+  }
 }

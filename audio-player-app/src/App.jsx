@@ -1,7 +1,8 @@
+// Components
 import AudioPlayer from './components/AudioPlayer'
 import TrackList from './components/TrackList'
 
-function App() {
+function App () {
   return (
     <>
       <AudioPlayer />

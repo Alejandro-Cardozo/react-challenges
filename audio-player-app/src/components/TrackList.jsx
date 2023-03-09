@@ -1,10 +1,11 @@
+// Data
 import { tracks } from '../data/tracks'
+// Components
 import ListTrackItem from './ListTrackItem'
-
+// Styles
 import classes from './TrackList.module.css'
 
 const TrackList = () => {
-
   return (
     <section className={classes.listSection}>
       <ul className={classes.list}>

@@ -1,5 +1,7 @@
 .listSection {
-  margin: 25px 350px;
+  /* margin: 25px 350px; */
+  margin: 25px auto;
+  max-width: 1200px
 }
 
 .list {
