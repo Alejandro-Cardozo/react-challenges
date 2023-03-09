@@ -14,35 +14,41 @@ import trinix from './trinix.jpeg'
 
 export const tracks = [
   {
+    id: 'song_001',
     title: "It's a beautiful day",
     src: beautiful,
     author: 'Trinix feat Rushawn',
     thumbnail: trinix
   },
   {
+    id: 'song_002',
     title: 'We Are The World',
     src: world,
     author: 'Michael Jackson',
     thumbnail: jackson
   },
   {
+    id: 'song_003',
     title: 'Top Of The World',
     src: top,
     author: "D'banj",
     thumbnail: dbanj
   },
   {
+    id: 'song_004',
     title: 'Cinematic Time Lapse',
     src: cinematic,
     author: 'Lexin Music',
     thumbnail: lexin
   },
   {
+    id: 'song_005',
     title: 'Forest Lullaby',
     src: forest,
     author: 'Lesfm'
   },
   {
+    id: 'song_006',
     title: 'The Podcast Intro',
     src: podcast,
     author: 'Music Unlimited'
