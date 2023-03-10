@@ -21,7 +21,7 @@ const useTrack = (tracks) => {
     setCurrentTrack(tracks[index])
   }, [trackIndex, tracks])
 
-  return [currentTrack, handleNext, handlePrevious, handleSelected]
+  return [currentTrack, trackIndex, handleNext, handlePrevious, handleSelected]
 }
 
 export default useTrack

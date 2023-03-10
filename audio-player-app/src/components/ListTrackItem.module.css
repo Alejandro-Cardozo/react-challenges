@@ -51,11 +51,34 @@
   background: #989898;
 }
 
-.audio-image img {
+.audio-image > div {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.70;
+  top: 0;
+  z-index: 1;
+}
+
+.audio-image > div > img {
   object-fit: cover;
   width: 100%;
   height: 100%;
   vertical-align: middle;
+}
+
+.playing {
+  color: #f50;
 }
 
 .duration {

@@ -10,10 +10,9 @@ import usePlayTrack from '../hooks/usePlayTrack'
 // Styles
 import classes from './AudioPlayer.module.css'
 
-const AudioPlayer = ({ currentTrack, handleNext, handlePrevious }) => {
+const AudioPlayer = ({ currentTrack, handleNext, handlePrevious, isPlaying, setIsPlaying }) => {
   const [timeProgress, setTimeProgress] = useState(0)
   const [duration, setDuration] = useState(0)
-  const [isPlaying, setIsPlaying] = useState(false)
 
   const audioRef = useRef()
   const progressBarRef = useRef()
