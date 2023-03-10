@@ -5,12 +5,12 @@ import ListTrackItem from './ListTrackItem'
 // Styles
 import classes from './TrackList.module.css'
 
-const TrackList = () => {
+const TrackList = ({ handleSelected }) => {
   return (
     <section className={classes.listSection}>
       <ul className={classes.list}>
-        {tracks.map((track) => (
-          <ListTrackItem key={track.id} track={track} />
+        {tracks.map((track, index) => (
+          <ListTrackItem key={track.id} track={track} index={index} handleSelected={handleSelected} />
         ))}
       </ul>
     </section>

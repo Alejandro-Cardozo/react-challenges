@@ -16,7 +16,12 @@ const useTrack = (tracks) => {
     setCurrentTrack(tracks[previousTrackIndex])
   }, [trackIndex, tracks])
 
-  return [currentTrack, handleNext, handlePrevious]
+  const handleSelected = useCallback((index) => {
+    setTrackIndex(index)
+    setCurrentTrack(tracks[index])
+  }, [trackIndex, tracks])
+
+  return [currentTrack, handleNext, handlePrevious, handleSelected]
 }
 
 export default useTrack

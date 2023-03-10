@@ -7,7 +7,7 @@ import { formatTime } from '../helpers/helpers'
 // Styles
 import classes from './ListTrackItem.module.css'
 
-const ListTrackItem = ({ track }) => {
+const ListTrackItem = ({ track, index, handleSelected }) => {
   const [duration, setDuration] = useState(0)
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const ListTrackItem = ({ track }) => {
   }, [formatTime, track.src])
 
   return (
-    <li className={classes.trackItem}>
+    <li className={classes.trackItem} onClick={() => handleSelected(index)}>
       <div className={classes['audio-image']}>
         {track.thumbnail
           ? (
