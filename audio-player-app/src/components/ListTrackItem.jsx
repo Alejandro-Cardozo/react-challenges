@@ -8,11 +8,18 @@ import { formatTime } from '../helpers/helpers'
 import classes from './ListTrackItem.module.css'
 import SoundBars from './SoundBars'
 
-const ListTrackItem = ({ track, index, handleSelected, trackIndex, isPlaying }) => {
+const ListTrackItem = ({
+  track,
+  index,
+  handleSelected,
+  trackIndex,
+  isPlaying
+}) => {
   const [duration, setDuration] = useState(0)
 
   useEffect(() => {
-    const audio = new Audio(track.src)
+    const audio = document.createElement('audio')
+    audio.src = track.src
     audio.addEventListener('loadedmetadata', () => {
       setDuration(audio.duration)
     })
@@ -25,19 +32,31 @@ const ListTrackItem = ({ track, index, handleSelected, trackIndex, isPlaying }) 
           ? (
             <div>
               <img src={track.thumbnail} alt={track.title} />
-              {index === trackIndex && <div className={classes.overlay}><SoundBars isPlaying={isPlaying} /></div>}
+              {index === trackIndex && (
+                <div className={classes.overlay}>
+                  <SoundBars isPlaying={isPlaying} />
+                </div>
+              )}
             </div>
             )
           : (
             <div className={classes['icon-wrapper']}>
               <span className={classes['audio-icon']}>
-                {index === trackIndex ? <SoundBars isPlaying={isPlaying} /> : <BsMusicNoteBeamed />}
+                {index === trackIndex
+                  ? (
+                    <SoundBars isPlaying={isPlaying} />
+                    )
+                  : (
+                    <BsMusicNoteBeamed />
+                    )}
               </span>
             </div>
             )}
       </div>
       <div className={classes.info}>
-        <h3 className={index === trackIndex ? classes.playing : ''}>{track.title}</h3>
+        <h3 className={index === trackIndex ? classes.playing : ''}>
+          {track.title}
+        </h3>
         <p>{track.author}</p>
       </div>
       <p className={classes.duration}>{formatTime(duration)}</p>
