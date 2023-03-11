@@ -24,7 +24,7 @@
   height: 2px;
   border-radius: 2px;
   cursor: pointer;
-  border: 0.5rem solid #c1b6bc;
+  border: 0.5rem solid #0c080a;
 }
 
 /* Input range - firefox */
@@ -35,7 +35,7 @@
   height: 2px;
   border-radius: 2px;
   cursor: pointer;
-  border: 0.5rem solid #c1b6bc;
+  border: 0.5rem solid #0c080a;
 }
 
 /* played volume length - Chrome & safari*/
@@ -89,4 +89,33 @@
 /* dragging thumb - firefox */
 .volume input[type="range"]:active::-moz-range-thumb {
   transform: scale(1.2);
+}
+
+/* muted played volume length - Chrome & safari*/
+.volume input[class="muted"]::before {
+  background: #ccc;
+}
+
+/* muted played volume length - firefox */
+.volume input[class="muted"]::-moz-range-progress {
+  background: #ccc;
+}
+
+/* muted slider thumb - chrome and safari */
+.volume input[class="muted"]::-webkit-slider-thumb {
+  background-color: #ccc;
+}
+
+/* muted slider thumb - firefox */
+.volume input[class="muted"]::-moz-range-thumb {
+  height: 8px;
+  width: 8px;
+  border-radius: 0;
+  background: #ccc;
+}
+
+@media only screen and (max-width: 768px) {
+  .volume > button > svg {
+    font-size: 18px;
+  }
 }

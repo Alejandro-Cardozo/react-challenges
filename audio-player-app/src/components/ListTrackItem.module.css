@@ -1,0 +1,127 @@
+.trackItem {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+}
+
+.trackItem:hover {
+  background-color: #2E3436;
+  cursor: pointer;
+}
+
+.info {
+  flex-grow: 1;
+  margin-left: 10px;
+}
+
+.info > h3 {
+  margin: 5px 0;
+}
+
+.info > p {
+  color: #ccc;
+  font-size: 14px;
+  margin: 0;
+}
+
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.audio-image {
+  min-width: 100px;
+  min-height: 100px;
+  max-width: 100px;
+  max-height: 100px;
+  background: #2E3436;
+  align-self: stretch;
+}
+
+.audio-icon {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: #989898;
+}
+
+.audio-image > div {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.70;
+  top: 0;
+  z-index: 1;
+}
+
+.audio-image > div > img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.playing {
+  color: #f50;
+}
+
+.duration {
+  color: #ccc;
+}
+
+@media only screen and (max-width: 1200px) {
+  .info > h3 {
+    margin: 4px 0;
+    font-size: 16px;
+  }
+  
+  .info > p {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .duration {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .audio-image {
+    min-width: 75px;
+    min-height: 75px;
+    max-width: 75px;
+    max-height: 75px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .info > h3 {
+    margin: 4px 0;
+    font-size: 14px;
+  }
+  
+  .info > p {
+    font-size: 10px;
+  }
+
+  .duration {
+    font-size: 12px;
+  }
+}

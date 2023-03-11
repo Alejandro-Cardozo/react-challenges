@@ -39,9 +39,9 @@ const DisplayTrack = ({
               </div>
               )}
         </div>
-        <div className={classes.text}>
+        <div>
           <p className={classes.title}>{currentTrack.title}</p>
-          <p>{currentTrack.author}</p>
+          <p className={classes.text}>{currentTrack.author}</p>
         </div>
       </div>
     </>
