@@ -1,5 +1,8 @@
 .audio-player {
   background: #0c080a;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .inner {
