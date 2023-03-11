@@ -1,10 +1,12 @@
 .listSection {
   /* margin: 25px 350px; */
   margin: 25px auto;
-  max-width: 1200px
+  max-width: 1200px;
 }
 
 .list {
   margin: 0;
   padding: 0;
+  overflow-x: auto;
+  height: 47vh;
 }
